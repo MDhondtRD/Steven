@@ -1,0 +1,215 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
+\usepackage[headheight=15pt,bottom=2.5cm]{geometry}
+\usepackage[demo]{graphicx}
+\usepackage[pdftex,bookmarks=true,pdfpagelabels,plainpages=false,pdfusetitle,breaklinks,hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{natbib}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{prettyref}
+\usepackage{csquotes}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{url}
+\usepackage{breakurl}
+\usepackage{placeins}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{upquote}
+\usepackage{emerald}
+\usepackage{subfig}
+
+\usetikzlibrary{calc,decorations.pathmorphing,patterns}
+
+\definecolor{bgreen}{HTML}{109618}
+\definecolor{byellow}{HTML}{FF9900}
+\definecolor{bred}{HTML}{DC3912}
+\definecolor{bblue}{HTML}{3366CC}
+
+\definecolor{consoleorange}{HTML}{DD7E7C}
+\definecolor{consolepurple}{HTML}{B46AB9}
+
+\definecolor{tikzorange}{HTML}{FE7125}
+\definecolor{tikzlightblue}{HTML}{08B6EC}
+\definecolor{tikzdarkblue}{HTML}{2930DF}
+\definecolor{tikzpurple}{HTML}{BD23DF}
+
+\definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{editorOcher}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
+\definecolor{editorGreen}{rgb}{0, 0.5, 0} % #007C00 -> rgb(0, 124, 0)
+\definecolor{blue(ncs)}{rgb}{0.0, 0.53, 0.74}
+
+%\let\Oldsection\section
+%\renewcommand{\section}{\FloatBarrier\Oldsection}
+
+\def\UrlBreaks{\do\/\do-}
+
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\newcommand{\emptypage}{
+	\newpage
+	\thispagestyle{empty}
+	\mbox{}
+	\newpage
+}
+
+\renewcommand{\arraystretch}{1.2}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\newcommand{\javacode}[2]{ \lstset{%
+  language=java,
+  breaklines=true,
+  float=th,
+  caption={#2},
+  basicstyle=\scriptsize,
+  frame=single,
+  extendedchars=\true
+}\lstinputlisting{#1}}
+
+\newcommand{\reactcode}[3]{ \lstset{%
+	backgroundcolor=\color{editorGray},
+	basicstyle={\scriptsize\ttfamily},
+	frame=l,
+	emph={React},
+	emphstyle={\color{blue(ncs)}\bfseries},
+  caption={#2},
+	label={#3},
+	captionpos=b,
+	xleftmargin={0.75cm},
+	numbers=left,
+	stepnumber=1,
+	firstnumber=1,
+	numberfirstline=true,
+	keywordstyle=\color{blue}\bfseries,
+	commentstyle=\color{editorGreen}\ttfamily,
+	ndkeywordstyle=\color{editorGreen}\bfseries,
+	stringstyle=\color{editorOcher},
+	language=HTML5,
+	alsolanguage=JavaScript,
+	alsodigit={:;},
+	tabsize=2,
+	showtabs=false,
+	showspaces=false,
+	showstringspaces=false,
+	extendedchars=true,
+	breaklines=true,  
+}\lstinputlisting[float]{#1}}
+
+\renewcommand{\lstlistingname}{Code fragment}
+\renewcommand{\lstlistlistingname}{Lijst van code fragmenten}
+
+\newcommand{\student}{Steven De Cock}
+\newcommand{\promotor}{Martine Van Audenrode}
+\newcommand{\copromotor}{David Hemmerijckx}
+\newcommand{\instelling}{HoGent}
+\newcommand{\titel}{Steven zijn witty titel}
+\newcommand{\datum}{8 januari 2016}
+\newcommand{\faculteit}{Faculteit Bedrijf en Organisatie}
+\newcommand{\rapporttype}{Scriptie voorgedragen tot het bekomen van de graad van\\Bachelor in de toegepaste informatica}
+\newcommand{\academiejaar}{2015-2016}
+\newcommand{\examenperiode}{Eerste examenperiode}
+
+\newrefformat{ch}{Hoofdstuk~\ref{#1}}
+\newrefformat{sec}{Sectie~\ref{#1}}
+\newrefformat{fig}{Figuur~\ref{#1}}
+\newrefformat{tbl}{Tabel~\ref{#1}}
+\newrefformat{code}{Code fragment~\ref{#1}}
+
+
+
+
+\makeatletter
+\newcommand\frontmatter{%
+	\cleardoublepage
+	\pagenumbering{roman}
+}
+
+\newcommand\mainmatter{%
+	\clearpage
+	\pagenumbering{arabic}
+}
+
+\newcommand\backmatter{%
+	\if@openright
+		\cleardoublepage
+	\else
+		\clearpage
+	\fi
+}
+
+\AtBeginDocument{%
+    \def\Ginclude@graphics#1{%
+      \begingroup\fboxsep=-\fboxrule
+      \fbox{\rule{\@ifundefined{Gin@@ewidth}{150pt}{\Gin@@ewidth}}{0pt}%
+        \rule{0pt}{\@ifundefined{Gin@@eheight}{100pt}{\Gin@@eheight}}}\endgroup}}
+
+\newenvironment{customlegend}[1][]{%
+    \begingroup
+    \pgfplots@init@cleared@structures
+    \pgfplotsset{#1}%
+}{%
+    \pgfplots@createlegend
+    \endgroup
+}%
+\def\addlegendimage{\pgfplots@addlegendimage}
+
+\pgfdeclaredecoration{penciline}{initial}{
+    \state{initial}[width=+\pgfdecoratedinputsegmentremainingdistance,auto corner on length=1mm,]{
+        \pgfpathcurveto%
+        {% From
+            \pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}
+                            {\pgfdecorationsegmentamplitude}
+        }
+        {%  Control 1
+        \pgfmathrand
+        \pgfpointadd{\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}{0pt}}
+                        {\pgfqpoint{-\pgfdecorationsegmentaspect\pgfdecoratedinputsegmentremainingdistance}%
+                                        {\pgfmathresult\pgfdecorationsegmentamplitude}
+                        }
+        }
+        {%TO 
+        \pgfpointadd{\pgfpointdecoratedinputsegmentlast}{\pgfpoint{1pt}{1pt}}
+        }
+    }
+    \state{final}{}
+}
+
+\makeatother
+
+
+\lstdefinelanguage{JavaScript}{
+  morekeywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morestring=[b]",
+  morestring=[b]'
+}
+
+\lstdefinelanguage{HTML5}{
+        language=html,
+        sensitive=true, 
+        alsoletter={<>=-},
+        otherkeywords={
+        % HTML tags
+        <html>, <head>, <title>, </title>, <meta, />, </head>, <body>,
+        <canvas, \/canvas>, <script>, </script>, </body>, </html>, <!, html>, <style>, </style>, ><
+        },  
+        ndkeywords={
+        % General
+        =,
+        % HTML attributes
+        charset=, id=, width=, height=,
+        % CSS properties
+        border:, transform:, -moz-transform:, transition-duration:, transition-property:, transition-timing-function:
+        },  
+        morecomment=[s]{<!--}{-->},
+        tag=[s]
+}

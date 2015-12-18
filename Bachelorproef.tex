@@ -1,0 +1,36 @@
+\documentclass[pdftex,a4paper,10pt,twoside]{report}
+
+\input{preamble}
+
+\begin{document}
+
+	\frontmatter
+	
+		\input{title}
+		
+		\begin{abstract}
+		 \lipsum[1-4]
+		\end{abstract}
+		
+		\input{voorwoord}
+		
+		\tableofcontents
+		
+		\listoffigures
+		
+		\listoftables
+		
+		\input{woordenlijst}
+		
+		\lstlistoflistings
+	
+	\mainmatter
+		
+		\input{react}
+	
+	\backmatter
+		
+		\bibliographystyle{apa-good}
+		\bibliography{Bachelorproef}
+	
+\end{document}
