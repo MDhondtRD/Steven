@@ -18,17 +18,7 @@
 	
 	\begin{figure}
 		\centering
-		\begin{tikzpicture}[every node/.style={draw,minimum width=25mm, minimum height=10mm,thick},>=latex]
-			\node[top color=mvclightgreen, bottom color=mvcdarkgreen] (view)       at (0,0) {\color{white}View};
-			\node[top color=mvclightorange,bottom color=mvcdarkorange](controller) at (3,3) {\color{white}Controller};
-			\node[top color=mvclightred,   bottom color=mvcdarkred  ] (model)      at (6,0) {\color{white}Model};
-			
-			\draw[->,thick] (view.north) -- ($(controller.south west)!.25!(controller.south east)$);
-			\draw[->,thick] (controller.south) -- ($(view.north west)!.75!(view.north east)$);
-			\draw[->,thick] (controller.south) -- ($(model.north west)!.25!(model.north east)$);
-			\draw[->,thick,dashed] ($(view.north east)!.7!(view.south east)$) -- ($(model.north west)!.7!(model.south west)$);
-			\draw[->,thick] ($(model.north west)!.3!(model.south west)$) -- ($(view.north east)!.3!(view.south east)$);
-		\end{tikzpicture}
+		\includegraphics[width=.5\columnwidth]{}
 		\caption{MVC basis architectuur}
 		\label{fig:mvcbasis}
 	\end{figure}
@@ -304,13 +294,13 @@
 		
 	De React API is klein en daardoor gemakkelijk aan te leren. Gemakkelijk wil niet zeggen dat het herkenbaar is. Eerst moeten er een aantal concepten en terminologie worden uitgelegd.
 
-\section{Componenten}
+\section{Componenten}\label{section:reactjscomponenten}
 	
 	Componenten zijn de basis van React en de view van de applicatie. Hieronder vindt je een simpel voorbeeld van zo’n component. Let goed op bij de `render' functie, deze geeft een HTML tag terug. Wanneer deze zal aangeroepen worden zal die de tekst ``Hello world'' laten verschijnen op de HTML pagina.
 	
 	\reactcode{code/componenten.js}{TODO: add caption}{code:comp}
 
-\section{Virtual DOM}
+\section{Virtual DOM}\label{section:virtualdom}
 	
 	Dit is waarschijnlijk het meest belangrijke concept van React. Het virtuele DOM is de oplossing voor het probleem die het DOM stelt, namelijk dat het (nog) niet aangepast werd voor het weergeven van dynamische data. Met JavaScript en JQuery kon je als ontwikkelaar wel een oplossing voor dit probleem vinden, maar dat bleek zowieso een hele hoop werk en er kwam heel wat code en denkwerk bij kijken. Dit was uiteraard het probleem waarvoor Facebook React heeft ontwikkeld. Het virtuele DOM is geen nieuw concept en bestaat al eerder dan React, React is wel ontwikkeld met het concept van het virtuele DOM in het achterhoofd.
 	
@@ -387,21 +377,6 @@
 					
 					\draw[decorate] (A) -- (G) (B) -- (H) (C) -- (I) (D) -- (J) (E) -- (K);
 					\node[draw=none,rectangle] at (1.75,2.25) {Zonder keys};
-					
-					\node[inner sep=3] (L) at (5.25,0) {a};
-					\node[inner sep=3] (M) at (6.00,0) {b};
-					\node[inner sep=3] (N) at (6.75,0) {c};
-					\node[tikzdarkblue,inner sep=3] (O) at (7.50,0) {z};
-					\node[inner sep=3] (P) at (8.25,0) {d};
-					\node[inner sep=3] (Q) at (9.00,0) {e};
-					\node[inner sep=3] (R) at (5.50,1.5) {a};
-					\node[inner sep=3] (S) at (6.25,1.5) {b};
-					\node[inner sep=3] (T) at (7.00,1.5) {c};
-					\node[inner sep=3] (U) at (7.75,1.5) {d};
-					\node[inner sep=3] (V) at (8.50,1.5) {e};
-					
-					\draw[decorate] (L) -- (R) (M) -- (S) (N) -- (T) (P) -- (U) (Q) -- (V);
-					\node[draw=none,rectangle] at (7.00,2.25) {Met keys};
 				\end{tikzpicture}
 				\caption{Lijsten}%
 				\label{fig:lijsten}%
@@ -420,62 +395,7 @@
 		
 		\begin{figure}
 			\centering
-			\resizebox{.99\linewidth}{!}{
-			\begin{tikzpicture}[decoration={random steps,segment length=1mm,amplitude=0.5pt},ultra thick,every node/.style={draw,circle,decorate,inner sep=4}]
-				\ECFJD
-				\node (sA) at (0.00,0) {};
-				\node (sB) at (0.50,1) {};
-				\node (sC) at (1.00,0) {};
-				\node (sD) at (1.50,2) {};
-				\node (sE) at (2.00,1) {};
-				\node (sF) at (2.50,3) {};
-				\node (sG) at (2.50,0) {};
-				\node (sH) at (3.00,1) {};
-				\node (sI) at (3.50,2) {};
-				\node (sJ) at (3.50,0) {};
-				\node (sK) at (4.00,1) {};
-				
-				\draw[decorate] (sA) -- (sB) (sB) -- (sC) (sB) -- (sD) (sD) -- (sE) (sD) -- (sF) (sF) -- (sI) (sI) -- (sH) (sI) -- (sK) (sH) -- (sG) (sH) -- (sJ);
-				\node[draw=none,rectangle] at (2.50,3.75) {setState};
-				
-				\draw[->,red,decorate] ($(sB.north)+(0,1)$) -- (sB.north);
-				\draw[->,red,decorate] ($(sA.west)-(1,0)$) -- (sA.west);
-				\draw[->,red,decorate] ($(sB.north west)+(-.7071,.7071)$) -- (sB.north west);
-				\draw[->,red,decorate] ($(sA.north west)+(-.7071,.7071)$) -- (sA.north west);
-				\draw[->,red,decorate] ($(sB.south east)+(.866,-.5)$) -- (sB.south east);
-				\draw[->,red,decorate] ($(sI.north east)+(.7071,.7071)$) -- (sI.north east);
-				
-				\node[fill=red] (dA) at (5.00,0) {};
-				\node[fill=red] (dB) at (5.50,1) {};
-				\node (dC) at (6.00,0) {};
-				\node (dD) at (6.50,2) {};
-				\node (dE) at (7.00,1) {};
-				\node (dF) at (7.50,3) {};
-				\node (dG) at (7.50,0) {};
-				\node (dH) at (8.00,1) {};
-				\node[fill=red] (dI) at (8.50,2) {};
-				\node (dJ) at (8.50,0) {};
-				\node (dK) at (9.00,1) {};
-				
-				\draw[decorate] (dA) -- (dB) (dB) -- (dC) (dB) -- (dD) (dD) -- (dE) (dD) -- (dF) (dF) -- (dI) (dI) -- (dH) (dI) -- (dK) (dH) -- (dG) (dH) -- (dJ);
-				\node[draw=none,rectangle] at (7.50,3.75) {Dirty};
-				
-				\node[fill=blue] (rA) at (10.00,0) {};
-				\node[fill=blue] (rB) at (10.50,1) {};
-				\node[fill=blue] (rC) at (11.00,0) {};
-				\node (rD) at (11.50,2) {};
-				\node (rE) at (12.00,1) {};
-				\node (rF) at (12.50,3) {};
-				\node[fill=blue] (rG) at (12.50,0) {};
-				\node[fill=blue] (rH) at (13.00,1) {};
-				\node[fill=blue] (rI) at (13.50,2) {};
-				\node[fill=blue] (rJ) at (13.50,0) {};
-				\node[fill=blue] (rK) at (14.00,1) {};
-				
-				\draw[decorate] (rA) -- (rB) (rB) -- (rC) (rB) -- (rD) (rD) -- (rE) (rD) -- (rF) (rF) -- (rI) (rI) -- (rH) (rI) -- (rK) (rH) -- (rG) (rH) -- (rJ);
-				\node[draw=none,rectangle] at (12.50,3.75) {Re-rendered};
-			\end{tikzpicture}
-			}
+			\includegraphics[width=.5\columnwidth]{}%
 			\caption{Flow setState to render DOM}%
 			\label{fig:setstateflow}%
 		\end{figure}
@@ -600,19 +520,7 @@
 		
 		\begin{figure}
 			\centering
-			\begin{tikzpicture}[every node/.style={anchor=south west},>=latex]
-				\node[draw,minimum width=5cm,minimum height=6.75cm] at (0,0) {};
-				\node[draw=floworange,fill=floworange,minimum width=5cm,minimum height=1cm] at (0,6.75) {\color{white}First Render};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidMount};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillMount};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}getInitialState};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (E) at (.5,5.5) {\color{white}getDefaultProps};
-				\draw[->,thick,floworange] (B) -- (A);
-				\draw[->,thick,floworange] (C) -- (B);
-				\draw[->,thick,floworange] (D) -- (C);
-				\draw[->,thick,floworange] (E) -- (D);
-			\end{tikzpicture}
+			\includegraphics[width=.5\columnwidth]{}%
 			\caption{Lifecycle first render}%
 			\label{fig:lifecyclefirstrender}%
 		\end{figure}
@@ -661,17 +569,7 @@
 		
 		\begin{figure}
 			\centering
-			\begin{tikzpicture}[every node/.style={anchor=south west},>=latex]
-				\node[draw,minimum width=5cm,minimum height=5.5cm] at (0,0) {};
-				\node[draw=floworange,fill=floworange,minimum width=5cm,minimum height=1cm] at (0,5.5) {\color{white}State Change};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidUpdate};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillUpdate};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}shouldComponentUpdate};
-				\draw[->,thick,floworange] (B) -- (A);
-				\draw[->,thick,floworange] (C) -- (B);
-				\draw[->,thick,floworange] (D) -- (C);
-			\end{tikzpicture}
+			\includegraphics[width=.5\columnwidth]{}%
 			\caption{Component state changed lifeCycle}%
 			\label{fig:changedlifecycle}%
 		\end{figure}
@@ -690,19 +588,7 @@
 		
 		\begin{figure}
 			\centering
-			\begin{tikzpicture}[every node/.style={anchor=south west},>=latex]
-				\node[draw,minimum width=5cm,minimum height=6.75cm] at (0,0) {};
-				\node[draw=floworange,fill=floworange,minimum width=5cm,minimum height=1cm] at (0,6.75) {\color{white}Props Change};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidUpdate};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillUpdate};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}shouldComponentUpdate};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4.5cm, minimum height=.75cm] (E) at (.25,5.5) {\color{white}componentWillRecieveProps};
-				\draw[->,thick,floworange] (B) -- (A);
-				\draw[->,thick,floworange] (C) -- (B);
-				\draw[->,thick,floworange] (D) -- (C);
-				\draw[->,thick,floworange] (E) -- (D);
-			\end{tikzpicture}
+			\includegraphics[width=.5\columnwidth]{}%
 			\caption{Pops change lifecycle}%
 			\label{fig:changelifecycle}%
 		\end{figure}
