@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[dutch]{babel}
 \usepackage[headheight=15pt,bottom=2.5cm]{geometry}
-\usepackage[demo]{graphicx}
+\usepackage{graphicx}
 \usepackage[pdftex,bookmarks=true,pdfpagelabels,plainpages=false,pdfusetitle,breaklinks,hidelinks]{hyperref}
 \usepackage{listings}
 \usepackage{natbib}
@@ -156,11 +156,6 @@
 	\fi
 }
 
-\AtBeginDocument{%
-    \def\Ginclude@graphics#1{%
-      \begingroup\fboxsep=-\fboxrule
-      \fbox{\rule{\@ifundefined{Gin@@ewidth}{150pt}{\Gin@@ewidth}}{0pt}%
-        \rule{0pt}{\@ifundefined{Gin@@eheight}{100pt}{\Gin@@eheight}}}\endgroup}}
 
 \newenvironment{customlegend}[1][]{%
     \begingroup
