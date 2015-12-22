@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[dutch]{babel}
 \usepackage[headheight=15pt,bottom=2.5cm]{geometry}
-\usepackage[demo]{graphicx}
+\usepackage{graphicx}
 \usepackage[pdftex,bookmarks=true,pdfpagelabels,plainpages=false,pdfusetitle,breaklinks,hidelinks]{hyperref}
 \usepackage{listings}
 \usepackage{natbib}
@@ -18,7 +18,7 @@
 \usepackage{url}
 \usepackage{breakurl}
 \usepackage{placeins}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \usepackage{pgfplots}
 \usepackage{upquote}
 \usepackage{emerald}
@@ -26,6 +26,7 @@
 
 \pgfplotsset{compat=newest}
 \usetikzlibrary{calc,decorations.pathmorphing,patterns}
+\pgfplotsset{every axis plot/.append style={mark=none,smooth,ultra thick}}
 
 \definecolor{bgreen}{HTML}{109618}
 \definecolor{byellow}{HTML}{FF9900}
@@ -54,6 +55,13 @@
 
 \definecolor{floworange}{HTML}{FF8A6C}
 \definecolor{flowblue}{HTML}{5274A8}
+
+\definecolor{graphgreen}{HTML}{70AD47}
+\definecolor{graphdarkblue}{HTML}{4472C4}
+\definecolor{graphyellow}{HTML}{FFC000}
+\definecolor{graphlightblue}{HTML}{5B9BD5}
+\definecolor{graphorange}{HTML}{ED7D31}
+\definecolor{graphpurple}{HTML}{685088}
 
 %\let\Oldsection\section
 %\renewcommand{\section}{\FloatBarrier\Oldsection}
@@ -156,11 +164,6 @@
 	\fi
 }
 
-\AtBeginDocument{%
-    \def\Ginclude@graphics#1{%
-      \begingroup\fboxsep=-\fboxrule
-      \fbox{\rule{\@ifundefined{Gin@@ewidth}{150pt}{\Gin@@ewidth}}{0pt}%
-        \rule{0pt}{\@ifundefined{Gin@@eheight}{100pt}{\Gin@@eheight}}}\endgroup}}
 
 \newenvironment{customlegend}[1][]{%
     \begingroup
