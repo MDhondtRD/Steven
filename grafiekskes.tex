@@ -3,6 +3,7 @@
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
+	\pgfplotsset{every axis plot/.append style={mark=none,smooth,ultra thick}}
 		\begin{axis}[
 									symbolic x coords={03/15,04/15,05/15,06/15,07/15,08/15,09/15,10/15,11/15,12/15},
 									width=.8\linewidth,
@@ -27,6 +28,7 @@
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
+	\pgfplotsset{every axis plot/.append style={mark=none,smooth,ultra thick}}
 		\begin{axis}[
 									symbolic x coords={03/15,04/15,05/15,06/15,07/15,08/15,09/15,10/15,11/15,12/15},
 									width=.8\linewidth,
@@ -51,7 +53,7 @@
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
-		%\tikzset{every picture/.style=thick}
+		\pgfplotsset{every axis plot/.append style={mark=none,smooth,ultra thick}}
 		\begin{axis}[
 									xtick={0,5,...,50},
 									width=.8\linewidth,
@@ -77,6 +79,7 @@
 	\centering
 	\resizebox{.7\linewidth}{!}{
 	\begin{tikzpicture}
+	\pgfplotsset{every axis plot/.append style={mark=none,smooth,ultra thick}}
 		\begin{axis}[
 									symbolic x coords={2012Q2,2012Q3,2012Q4,2013Q1,2013Q2,2013Q3,2013Q4,2014Q1,2014Q2,2014Q3,2014Q4,2015Q1,2015Q2},
 									width=.8\linewidth,
@@ -95,6 +98,7 @@
 		\end{axis}
 	\end{tikzpicture}
 	}
+	\vspace*{2ex}
 		\begin{tabular}[b]{ssssss}
 			\toprule
 			 & \cellcolor{graphgreen!50}Android & \cellcolor{graphdarkblue!50}iOS & \cellcolor{graphyellow!50}Windows Phone & \cellcolor{graphpurple!50}BlackBerry OS & \cellcolor{graphorange!50}Others \\

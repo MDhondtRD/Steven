@@ -40,12 +40,42 @@ Op niveau van mobiele applicaties zijn er verschillende OS, dit zijn de belangri
 
 Android en iOS hebben volgens IDC (International Data Corporation)(\prettyref{fig:idc}) samen een marktaandeel van 96.7\%. Windows phone is daarna de grootste met slechts 2.6\%. \citep{idc:mobile}
 
-	\begin{figure}
-		\centering
-		\includegraphics[width=.5\columnwidth]{img/idc.png}
-		\caption{IDC - worldwide smartphone OS Market Share, Aug 2015}
-		\label{fig:idc}
-	\end{figure}
+\begin{figure}
+	\centering
+	\resizebox{.7\linewidth}{!}{
+	\begin{tikzpicture}
+	\pgfplotsset{every axis plot/.append style={mark=none,smooth,ultra thick}}
+		\begin{axis}[
+									symbolic x coords={2012Q2,2012Q3,2012Q4,2013Q1,2013Q2,2013Q3,2013Q4,2014Q1,2014Q2,2014Q3,2014Q4,2015Q1,2015Q2},
+									width=.8\linewidth,
+									ylabel={Procentueel aandel},
+									ymin=0,
+									ymax=100,
+									scaled ticks=false,
+									axis lines=left,
+									x tick label style={rotate=45, anchor=north east, inner sep=1mm}
+								]
+			\addplot[graphgreen] coordinates { (2012Q2, 69.3) (2012Q3, 75) (2012Q4, 70) (2013Q1, 75) (2013Q2, 79.8) (2013Q3, 82) (2013Q4, 77) (2014Q1, 81) (2014Q2, 84.8) (2014Q3, 83) (2014Q4, 76) (2015Q1, 78) (2015Q2, 82.8) };
+			\addplot[graphdarkblue] coordinates { (2012Q2, 16.6) (2012Q3, 14) (2012Q4, 21) (2013Q1, 17) (2013Q2, 12.9) (2013Q3, 13) (2013Q4, 18) (2014Q1, 15) (2014Q2, 11.6) (2014Q3, 11) (2014Q4, 20) (2015Q1, 18) (2015Q2, 13.9) };
+			\addplot[graphyellow] coordinates { (2012Q2, 3.1) (2012Q3, 2) (2012Q4, 3) (2013Q1, 3) (2013Q2, 3.4) (2013Q3, 4) (2013Q4, 3) (2014Q1, 3) (2014Q2, 2.5) (2014Q3, 2.5) (2014Q4, 3) (2015Q1, 3) (2015Q2, 2.6) };
+			\addplot[graphpurple] coordinates { (2012Q2, 4.9) (2012Q3, 4.3) (2012Q4, 3.7) (2013Q1, 3.3) (2013Q2, 2.8) (2013Q3, 2.2) (2013Q4, 1.6) (2014Q1, 1) (2014Q2, .5) (2014Q3, .5) (2014Q4, .4) (2015Q1, .3) (2015Q2, .3) };
+			\addplot[graphorange] coordinates { (2012Q2, 6.1) (2012Q3, 5) (2012Q4, 4) (2013Q1, 3) (2013Q2, 1.2) (2013Q3, 1) (2013Q4, 1) (2014Q1, 1) (2014Q2, .7) (2014Q3, .5) (2014Q4, .5) (2015Q1, .5) (2015Q2, .4) };
+		\end{axis}
+	\end{tikzpicture}
+	}
+	\vspace*{2ex}
+		\begin{tabular}[b]{ssssss}
+			\toprule
+			 & \cellcolor{graphgreen!50}Android & \cellcolor{graphdarkblue!50}iOS & \cellcolor{graphyellow!50}Windows Phone & \cellcolor{graphpurple!50}BlackBerry OS & \cellcolor{graphorange!50}Others \\
+			2012Q2 & \SI{69.3}{\percent} & \SI{16.6}{\percent} & \SI{3.1}{\percent} & \SI{4.9}{\percent} & \SI{6.1}{\percent} \\
+			2013Q2 & \SI{79.8}{\percent} & \SI{12.9}{\percent} & \SI{3.4}{\percent} & \SI{2.8}{\percent} & \SI{1.2}{\percent} \\
+			2014Q2 & \SI{84.8}{\percent} & \SI{11.6}{\percent} & \SI{2.5}{\percent} & \SI{0.5}{\percent} & \SI{0.7}{\percent} \\
+			2015Q2 & \SI{82.8}{\percent} & \SI{13.9}{\percent} & \SI{2.6}{\percent} & \SI{0.3}{\percent} & \SI{0.4}{\percent} \\
+			\bottomrule
+		\end{tabular}
+	\caption{IDC - worldwide smartphone OS Market Share, Aug 2015}
+	\label{fig:idc}
+\end{figure}
 
 \section{Hybride applicaties}\label{section:hybride}
 
@@ -79,12 +109,67 @@ Een aantal voorbeelden van populaire hybride applicaties :
 
 Uit deze voorbeelden kan de conclusie getrokken worden dat wanneer men een applicatie wenst te bouwen die veel http aanvragen (post, get, ….) zal moeten uitvoeren, best hybride ontwikkeld wordt.
 	
-	\begin{figure}
-		\centering
-		\includegraphics[width=.5\columnwidth]{img/hybridevsnative.jpg}
-		\caption{Hybride vs. Native write-test-build}
-		\label{fig:hybridevsnative}
-	\end{figure}
+\begin{figure}
+               \centering
+               \begin{tikzpicture}[decoration={random steps,segment length=1mm,amplitude=0.5pt},ultra thick]
+                              \ECFJD
+                              \node (w5) at (3,5) {WRITE};
+                              \node (w6) at (3,6) {WRITE};
+                              \node (w7) at (3,7) {WRITE};
+                              \node (w8) at (3,8) {WRITE};
+                              \node (t5) at (5,5) {TEST};
+                              \node (t6) at (5,6) {TEST};
+                              \node (t7) at (5,7) {TEST};
+                              \node (t8) at (5,8) {TEST};
+                              \node (b5) at (7,5) {BUILD};
+                              \node (b6) at (7,6) {BUILD};
+                              \node (b7) at (7,7) {BUILD};
+                              \node (b8) at (7,8) {BUILD};
+                              \node[minimum width=3cm,decorate,draw,fill=graphgreen!50] (os8) at (10,8) {Android};
+                              \node[minimum width=3cm,decorate,draw,fill=graphdarkblue!50] (os7) at (10,7) {iOS};
+                              \node[minimum width=3cm,decorate,draw,fill=graphpurple!50] (os6) at (10,6) {BlackBerry};
+                              \node[minimum width=3cm,decorate,draw,fill=graphyellow!50] (os5) at (10,5) {Windows Phone};
+                              \draw[decorate,->] (w5) -- (t5);
+                              \draw[decorate,->] (t5) -- (b5);
+                              \draw[decorate,->] (w6) -- (t6);
+                              \draw[decorate,->] (t6) -- (b6);
+                              \draw[decorate,->] (w7) -- (t7);
+                              \draw[decorate,->] (t7) -- (b7);
+                              \draw[decorate,->] (w8) -- (t8);
+                              \draw[decorate,->] (t8) -- (b8);
+                              \draw[decorate,->] (b8) -- ($(os8.west)-(.5em,0)$);
+                              \draw[decorate,->] (b7) -- ($(os7.west)-(.5em,0)$);
+                              \draw[decorate,->] (b6) -- ($(os6.west)-(.5em,0)$);
+                              \draw[decorate,->] (b5) -- ($(os5.west)-(.5em,0)$);
+                              
+                              \node at (1,6.5) {\rotatebox{90}{\huge NATIVE}};
+                              \draw[decorate,dashed] (0,4) -- (12,4);
+                              \node at (1,1.5) {\rotatebox{90}{\huge HYBRID}};
+                              
+                              \node (w0) at (3,1.5) {WRITE};
+                              \node (t0) at (5,1.5) {TEST};
+                              \node (b0) at (7,0) {BUILD};
+                              \node (b1) at (7,1) {BUILD};
+                              \node (b2) at (7,2) {BUILD};
+                              \node (b3) at (7,3) {BUILD};
+                              \node[minimum width=3cm,decorate,draw,fill=graphgreen!50] (os3) at (10,3) {Android};
+                              \node[minimum width=3cm,decorate,draw,fill=graphdarkblue!50] (os2) at (10,2) {iOS};
+                              \node[minimum width=3cm,decorate,draw,fill=graphpurple!50] (os1) at (10,1) {BlackBerry};
+                              \node[minimum width=3cm,decorate,draw,fill=graphyellow!50] (os0) at (10,0) {Windows Phone};
+                              \draw[decorate,->] (w0) -- (t0);
+                              \draw[decorate,->] (t0) to [out=270,in=180] (b0);
+                              \draw[decorate,->] (t0) to [out=330,in=180] (b1);
+                              \draw[decorate,->] (t0) to [out=30,in=180] (b2);
+                              \draw[decorate,->] (t0) to [out=90,in=180] (b3);
+                              \draw[decorate,->] (b0) -- ($(os0.west)-(.5em,0)$);
+                              \draw[decorate,->] (b1) -- ($(os1.west)-(.5em,0)$);
+                              \draw[decorate,->] (b2) -- ($(os2.west)-(.5em,0)$);
+                              \draw[decorate,->] (b3) -- ($(os3.west)-(.5em,0)$);
+               \end{tikzpicture}
+               \caption{Hybride vs. Native ontwikkeling}
+               \label{fig:hybridevsnative}
+\end{figure}
+
 	
 	\section{Waarom React Native?}
 	Er zijn verschillende redenen waarom native mobiele omgevingen moeilijker zijn om mee te werken dan het web. Allereerst, is het moeilijk om componenten weer te geven op het scherm, deze moeten vaak manueel op de view geplaatst worden en ze moeten voorzien worden van een grootte. Daarnaast was er geen mogelijkheid om React code te integreren, die het proces voor bouwen van websites met telkens veranderende datasets had vereenvoudigd. 
@@ -107,11 +192,37 @@ Om de werking van React Native te kunnen begrijpen moet de werking van React gek
 Facebook heeft hiervoor met React Native een gepaste oplossing bedacht, in plaats van gebruik te maken van het DOM van de browser gaat React Native Objective C API’s gebruiken om iOS componenten weer te geven, of Java API’s gebruiken om Android componenten weer te geven.  In \prettyref{fig:dombridge} wordt het verschil tussen een React component en React Native component op gebied van weergave getoond. In plaats van het Virtuele DOM wordt de “bridge” aangesproken om de juiste weergave te tonen in de juiste OS.  
 
 	\begin{figure}
-		\centering
-		\includegraphics[width=\columnwidth]{img/bridge.png}
+               \centering
+               \begin{tikzpicture}[decoration={random steps,segment length=1mm,amplitude=0.5pt},ultra thick]
+                              \ECFJD
+                              \node[draw,align=left,decorate] (c1) at (0,2.5) 
+                                             {\texttt{React component} \\ \texttt{render: function() \{} \\ \hspace*{1em}\texttt{return <div>Hi!</div>;\hphantom{VV}} \\ \texttt{\}}};
+                              \node[draw,align=left,decorate] (c2) at (0,0) 
+                                             {\texttt{React component} \\ \texttt{render: function() \{} \\ \hspace*{1em}\texttt{return <View>Hi!</View>;} \\ \texttt{\}}};
+                              
+                              \node[draw,decorate,minimum height=.95cm,minimum width=1.5cm] (r1) at (5,2.5) {ReactJS};
+                              \node[draw,decorate,align=left,minimum width=1.5cm] (r2) at (5,0) {React \\ Native};
+                              
+                              \draw[decorate,->] (c1) -- (r1);
+                              \draw[decorate,->] (c2) -- (r2);
+                              
+                              \node[draw,decorate,align=left,minimum width=1.5cm] (b1) at (8,2.5) {Browser \\ \hspace*{.8em}DOM};
+                              \node[draw,decorate,minimum width=1.5cm,fill=graphdarkblue!50] (b2) at (9,.8) {iOS};
+                              \node[draw,decorate,minimum width=1.5cm,fill=graphgreen!50] (b3) at (9,0) {Android};
+                              \node[draw,decorate,minimum width=1.5cm,fill=graphorange!50] (b4) at (9,-.8) {???};
+                              
+                              \draw[decorate,->] (r1) -- (b1);
+                              \draw[decorate,dashed,->] (r2) -- (b3);
+                              \draw[decorate,dashed,->] (r2) -- (b4.west);
+                              \draw[->, >=latex, graphdarkblue!50, line width=7pt]  ($(r2.east)+(.3em,.6em)$) to node[black]{\rotatebox{20}{\footnotesize brug}} ($(b2.west)-(.3em,0)$);
+                              \node[draw,decorate,align=left,minimum width=1.5cm] (r2) at (5,0) {React \\ Native};
+                              
+                              
+               \end{tikzpicture}
 		\caption{Virtual DOM vs bridge}
 		\label{fig:dombridge}
-	\end{figure}
+\end{figure}
+
 
 
 De bridge of brug die gemaakt wordt voorziet React van een interface in de platform specifieke UI elementen. De layout die voorzien wordt door de render functie van een React component zal met ander woorden vertaald worden naar een gepaste component. Bv. <view> kan vertaald worden naar een iOS specifieke UIView. De brug is niet uniek aan React, het PhoneGap framework gebruikt ook een brug om API’s aan te spreken, het verschil met React Native is dat de brug niet enkel de hardware componenten zal gaan aanspreken maar ook de componenten die de layout van een native applicatie gaat samenstellen.
@@ -140,11 +251,89 @@ Daarnaast is de code herbruikbaarheid van React Native applicaties ook nog een e
 
 Mark Shilling benadrukt in zijn bevindingen over werken met React Native als doorwinterde iOS developer, dat React Native nog niet volledig op punt staat maar dat er in een paar maanden tijd reeds veel gebeurd is door de community en Facebook om de kleine irritaties van ontwikkelaars weg te werken. 
 
+\section{React Native populariteit op het internet}
+
+React en React Native zijn nog niet zo lang actief op het internet, toch zijn er een aantal trends zichtbaar.
+De grafiek \prettyref{fig:questions} toont het aantal vragen die bij \emph{StackOverflow} worden gesteld over de Thema’s ReactJS en React Native, per maand in cumulatieve vorm. Aangezien React Native vrij jong is, zijn het aantal vragen dus ook nog vrij klein maar belangrijk om op te merken is dat de lijn sterk stijgend is zowel voor ReactJS als voor React Native. ReactJS kreeg ook een boost wanneer React Native werd aangekondigd en React Native krijgt een piek moment wanneer Facebook de Android versie ervoor uitbracht. Hetzelfde geldt voor de score die toegekend wordt aan een bepaalde vraag of antwoord over een bepaald onderwerp (\prettyref{fig:score}), de trend is in stijgende lijn wat betekent dat de community van React Native actief bezig is om ontwikkelaars te ondersteunen bij het bouwen van React Native applicaties, en samen op zoek gaan naar \emph{best practices}. 
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+	\pgfplotsset{every axis plot/.append style={mark=none,smooth,ultra thick}}
+		\begin{axis}[
+									symbolic x coords={03/15,04/15,05/15,06/15,07/15,08/15,09/15,10/15,11/15,12/15},
+									width=.8\linewidth,
+									ylabel={Vragen},
+									legend cell align=left,
+									ymin=0,
+									ymax=8100,
+									scaled ticks=false,
+									axis lines=left,
+									x tick label style={rotate=45, anchor=north east, inner sep=1mm},
+									legend entries={ReactJS, React-Native},
+									legend pos = north west
+								]
+			\addplot[graphlightblue] coordinates { (03/15, 2016) (04/15, 2488) (05/15, 2943) (06/15, 3492) (07/15, 4170) (08/15, 4822) (09/15, 5620) (10/15, 6530) (11/15, 7563) (12/15, 8003) };
+			\addplot[graphorange] coordinates { (03/15, 73) (04/15, 196) (05/15, 311) (06/15, 394) (07/15, 500) (08/15, 613) (09/15, 800) (10/15, 1079) (11/15, 1434) (12/15, 1652) };
+		\end{axis}
+	\end{tikzpicture}
+	\caption{StackOverflow vragen}
+	\label{fig:questions}
+\end{figure}
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+	\pgfplotsset{every axis plot/.append style={mark=none,smooth,ultra thick}}
+		\begin{axis}[
+									symbolic x coords={03/15,04/15,05/15,06/15,07/15,08/15,09/15,10/15,11/15,12/15},
+									width=.8\linewidth,
+									ylabel={Score},
+									legend cell align=left,
+									ymin=0,
+									ymax=13000,
+									scaled ticks=false,
+									axis lines=left,
+									x tick label style={rotate=45, anchor=north east, inner sep=1mm},
+									legend entries={ReactJS, React-Native},
+									legend pos = north west
+								]
+			\addplot[graphlightblue] coordinates { (03/15, 7882) (04/15, 8606) (05/15, 9145) (06/15, 9691) (07/15, 10310) (08/15, 10829) (09/15, 11508) (10/15, 12144) (11/15, 12685) (12/15, 12861) };
+			\addplot[graphorange] coordinates { (03/15, 392) (04/15, 650) (05/15, 775) (06/15, 872) (07/15, 938) (08/15, 1083) (09/15, 1319) (10/15, 1491) (11/15, 1614) (12/15, 1709) };
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Score}
+	\label{fig:score}
+\end{figure}
+
+Dezelfde trends kan men terug vinden bij \emph{Google Trends} \prettyref{fig:google} die de zoekopdrachten op basis van kernwoorden \emph{ReactJS} en \emph{React Native} weergeeft week na week, startend van begin 2015. React Native heeft overduidelijke piekmomenten tijdens de eerste periode, Maart 2015 (week 16 - 17) toen het voor het eerst werd uitgebracht en tijdens de periode dat React Native ook voor Android beschikbaar werd, September 2015 (week 37 - 38). Toch is de algemene trend voor zowel ReactJS als voor React Native een stijgende lijn in zoekopdrachten bij \emph{Google Trends} .
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\pgfplotsset{every axis plot/.append style={mark=none,smooth,ultra thick}}
+		\begin{axis}[
+									xtick={0,5,...,50},
+									width=.8\linewidth,
+									ylabel={Aantal},
+									xlabel={Week},
+									legend cell align=left,
+									ymin=0,
+									ymax=100,
+									scaled ticks=false,
+									axis lines=left,
+									legend entries={ReactJS, React-Native},
+									legend pos = north west
+								]
+			\addplot[graphlightblue] coordinates { (1, 38) (2, 40) (3, 39) (4, 82) (5, 82) (6, 64) (7, 61) (8, 64) (9, 73) (10, 72) (11, 64) (12, 73) (13, 59) (14, 67) (15, 64) (16, 71) (17, 58) (18, 61) (19, 63) (20, 70) (21, 66) (22, 70) (23, 64) (24, 67) (25, 73) (26, 79) (27, 76) (28, 84) (29, 76) (30, 71) (31, 76) (32, 78) (33, 78) (34, 77) (35, 77) (36, 79) (37, 79) (38, 81) (39, 81) (40, 82) (41, 79) (42, 75) (43, 85) (44, 91) (45, 87) (46, 87) (47, 84) (48, 91) (49, 87) (50, 85) };
+			\addplot[graphorange] coordinates { (1, 0) (2, 0) (3, 0) (4, 44) (5, 37) (6, 31) (7, 20) (8, 18) (9, 20) (10, 14) (11, 15) (12, 75) (13, 59) (14, 36) (15, 40) (16, 46) (17, 36) (18, 26) (19, 33) (20, 26) (21, 29) (22, 32) (23, 30) (24, 32) (25, 39) (26, 32) (27, 34) (28, 35) (29, 37) (30, 38) (31, 35) (32, 33) (33, 35) (34, 40) (35, 40) (36, 43) (37, 100) (38, 73) (39, 64) (40, 68) (41, 73) (42, 68) (43, 64) (44, 66) (45, 69) (46, 76) (47, 73) (48, 71) (49, 76) (50, 92) };
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Google Trends zoekopdrachten met kernwoorden ReactJS en React Native}
+	\label{fig:google}
+\end{figure}
 \section{React Native componenten}
-Net zoals in \prettyref{section:reactjscomponenten}, werkt React Native op een exacte wijze om componenten aan te maken. Toch zijn er een aantal verschillen in syntax, zoals eerder vermeld werkt native niet met het DOM maar met platform specifieke componenten. Deze moeten dan ook op correcte wijze worden aangesproken.
+Net zoals in ReactJS (\prettyref{section:rjscomponenten}), werkt React Native op een exacte wijze om componenten aan te maken. Toch zijn er een aantal verschillen in syntax, zoals eerder vermeld werkt native niet met het DOM maar met platform specifieke componenten. Deze moeten dan ook op correcte wijze worden aangesproken.
 
 \subsection{Views}
- In ReactJS plaatsen we HTML componenten op het DOM (div, p, span), bij React Native gaan we de platform componenten gaan weergeven. Het meest basis component in UI elementen is <View> die voor een webontwikkelaar best te vergelijken is met het <div> element, en zich vertaald naar respectievelijk iOS en Android als UIView en View. 
+ In ReactJS plaatsen we HTML componenten op het DOM (\emph{<div>, <p>, <span>}), bij React Native gaan we de platform componenten gaan weergeven. Het meest basis component in \hyperref[ui]{UI} elementen is \emph{<View>} die voor een webontwikkelaar best te vergelijken is met het \emph{<div>} element, en zich vertaald naar respectievelijk iOS en Android als \emph{UIView} en \emph{View}. 
 In \prettyref{table:componenten} wordt een vergelijking van HTML componenten, gebruikt in ReactJS gemaakt met React Native tegenhangers. 
 
 
@@ -162,15 +351,15 @@ ReactJS & React Native \\
   \bottomrule
 \end{tabular}
 \caption{ReactJS componenten vs React Native componenten}
-\label{table:compone2nten}
+\label{table:componenten}
 \end{table}
 
 \reactcode{code/rncomponent.js}{Basis component React Native}{code:rncomponent}
-In \prettyref{code:rncomponent}  wordt er getoond hoe een component wordt samengesteld in React Native, het enige verschil met het web is zoals eerder vermeld enkel de UI componenten. Deze componenten uit \prettyref{table:componenten} worden aanzien als de basis componenten en worden automatisch geïmporteerd vanuit het standaard package die automatisch wordt ingeladen wanneer een nieuwe applicatie wordt gestart. Wanneer de ontwikkelaar andere componenten wenst te gebruiken in zijn applicatie zullen die eerst geïmporteerd moeten worden, zoals \prettyref{code:rnimport}, let hierbij goed op de naamgeving van het component \emph{DatePickerIOS}. Platform specifieke componenten en API’s krijgen speciale tags, waarbij de suffix de platform naam is. 
+In \prettyref{code:rncomponent}  wordt er getoond hoe een component wordt samengesteld in React Native, het enige verschil met het web is zoals eerder vermeld enkel de UI componenten. Deze componenten uit \prettyref{table:componenten} worden aanzien als de basis componenten en worden automatisch geïmporteerd vanuit het standaard package die automatisch wordt ingeladen wanneer een nieuwe applicatie wordt gestart. Wanneer de ontwikkelaar andere componenten wenst te gebruiken in zijn applicatie zullen die eerst geïmporteerd moeten worden, zoals \prettyref{code:rnimport}, let hierbij goed op de naamgeving van het component \emph{DatePickerIOS}. Platform specifieke componenten en \hyperref[api]{API's} krijgen speciale tags, waarbij de suffix de platform naam is. 
 \reactcode{code/rnimport.js}{Import een component in React Native}{code:rnimport}
 
 \subsection{Stijlen van componenten}
-Op het web wordt een stijl meegegeven aan componenten d.m.v. CSS, aanbieders van mobiele OS hebben vaak een eigen manier om componenten vorm te geven. Bij Android gebeurt dit door XML en bij iOS heeft men een eigen variant gemaakt, React Native heeft één standaard aanpak gecreëerd om componenten te gaan stijlen. De wijze waarop in React Native stijl aan componenten wordt gegeven is een vereenvoudigde versie van CSS die door de brug, steunend op flexbox modaliteiten vertaald wordt naar de platform eigen stijlen.
+Op het web wordt een stijl meegegeven aan componenten door middel van \hyperref[css]{CSS}, aanbieders van mobiele \hyperref[os]{OS} hebben vaak een eigen manier om componenten vorm te geven. Bij Android gebeurt dit door \hyperref[xml]{XML} en bij iOS heeft men een eigen variant gemaakt, React Native heeft één standaard aanpak gecreëerd om componenten te gaan stijlen. De wijze waarop in React Native stijl aan componenten wordt gegeven is een vereenvoudigde versie van \hyperref[css]{CSS} die door de brug, steunend op \hyperref[flexbox]{Flexbox} modaliteiten vertaald wordt naar de platform eigen stijlen.
 Het is in React Native niet gebruikelijk om aparte stijlpagina’s te maken zoals bij het web, maar om de stijl als een JavaScript object te omschrijven. In \prettyref{code:rnstyle}, zie je hoe een stijl aan een component wordt meegegeven.
  
 \reactcode{code/rnstyle.js}{Stijlen van componenten in React Native}{code:rnstyle}
