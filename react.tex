@@ -18,16 +18,28 @@
 	
 	\begin{figure}
 		\centering
-		\begin{tikzpicture}[every node/.style={draw,minimum width=25mm, minimum height=10mm,thick},>=latex]
-			\node[top color=mvclightgreen, bottom color=mvcdarkgreen] (view)       at (0,0) {\color{white}View};
-			\node[top color=mvclightorange,bottom color=mvcdarkorange](controller) at (3,3) {\color{white}Controller};
-			\node[top color=mvclightred,   bottom color=mvcdarkred  ] (model)      at (6,0) {\color{white}Model};
+		%\begin{tikzpicture}[every node/.style={draw,minimum width=25mm, minimum height=10mm,thick},>=latex]
+			%\node[top color=mvclightgreen, bottom color=mvcdarkgreen] (view)       at (0,0) {\color{white}View};
+			%\node[top color=mvclightorange,bottom color=mvcdarkorange](controller) at (3,3) {\color{white}Controller};
+			%\node[top color=mvclightred,   bottom color=mvcdarkred  ] (model)      at (6,0) {\color{white}Model};
+			%
+			%\draw[->,thick] (view.north) -- ($(controller.south west)!.25!(controller.south east)$);
+			%\draw[->,thick] (controller.south) -- ($(view.north west)!.75!(view.north east)$);
+			%\draw[->,thick] (controller.south) -- ($(model.north west)!.25!(model.north east)$);
+			%\draw[->,thick,dashed] ($(view.north east)!.7!(view.south east)$) -- ($(model.north west)!.7!(model.south west)$);
+			%\draw[->,thick] ($(model.north west)!.3!(model.south west)$) -- ($(view.north east)!.3!(view.south east)$);
+		%\end{tikzpicture}
+		\begin{tikzpicture}[every node/.style={decorate,draw,minimum width=25mm, minimum height=10mm},>=latex,decoration={random steps,segment length=1mm,amplitude=0.5pt},ultra thick]
+			\ECFJD
+			\node[fill=graphlightblue] (view)       at (0,0) {\color{white}View};
+			\node[fill=graphlightblue] (controller) at (3,3) {\color{white}Controller};
+			\node[fill=graphlightblue] (model)      at (6,0) {\color{white}Model};
 			
-			\draw[->,thick] (view.north) -- ($(controller.south west)!.25!(controller.south east)$);
-			\draw[->,thick] (controller.south) -- ($(view.north west)!.75!(view.north east)$);
-			\draw[->,thick] (controller.south) -- ($(model.north west)!.25!(model.north east)$);
-			\draw[->,thick,dashed] ($(view.north east)!.7!(view.south east)$) -- ($(model.north west)!.7!(model.south west)$);
-			\draw[->,thick] ($(model.north west)!.3!(model.south west)$) -- ($(view.north east)!.3!(view.south east)$);
+			\draw[->,graphorange,decorate] (view.north) -- ($(controller.south west)!.25!(controller.south east)$);
+			\draw[->,graphorange,decorate] (controller.south) -- ($(view.north west)!.75!(view.north east)$);
+			\draw[->,graphorange,decorate] (controller.south) -- ($(model.north west)!.25!(model.north east)$);
+			\draw[->,dashed,graphorange,decorate] ($(view.north east)!.7!(view.south east)$) -- ($(model.north west)!.7!(model.south west)$);
+			\draw[->,graphorange,decorate] ($(model.north west)!.3!(model.south west)$) -- ($(view.north east)!.3!(view.south east)$);
 		\end{tikzpicture}
 		\caption{MVC basis architectuur}
 		\label{fig:mvcbasis}
@@ -600,18 +612,32 @@
 		
 		\begin{figure}
 			\centering
-			\begin{tikzpicture}[every node/.style={anchor=south west},>=latex]
-				\node[draw,minimum width=5cm,minimum height=6.75cm] at (0,0) {};
-				\node[draw=floworange,fill=floworange,minimum width=5cm,minimum height=1cm] at (0,6.75) {\color{white}First Render};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidMount};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillMount};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}getInitialState};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (E) at (.5,5.5) {\color{white}getDefaultProps};
-				\draw[->,thick,floworange] (B) -- (A);
-				\draw[->,thick,floworange] (C) -- (B);
-				\draw[->,thick,floworange] (D) -- (C);
-				\draw[->,thick,floworange] (E) -- (D);
+			%\begin{tikzpicture}[every node/.style={anchor=south west},>=latex]
+				%\node[draw,minimum width=5cm,minimum height=6.75cm] at (0,0) {};
+				%\node[draw=floworange,fill=floworange,minimum width=5cm,minimum height=1cm] at (0,6.75) {\color{white}First Render};
+				%\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidMount};
+				%\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
+				%\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillMount};
+				%\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}getInitialState};
+				%\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (E) at (.5,5.5) {\color{white}getDefaultProps};
+				%\draw[->,thick,floworange] (B) -- (A);
+				%\draw[->,thick,floworange] (C) -- (B);
+				%\draw[->,thick,floworange] (D) -- (C);
+				%\draw[->,thick,floworange] (E) -- (D);
+			%\end{tikzpicture}
+			\begin{tikzpicture}[every node/.style={decorate,draw,anchor=south west},>=latex,decoration={random steps,segment length=1mm,amplitude=0.5pt},ultra thick]
+				{\ECFJD
+				\node[draw,minimum width=5cm,minimum height=6.8cm] at (0,0) {};
+				\node[draw=graphorange,fill=graphorange,minimum width=5cm,minimum height=1cm] at (0,6.75) {\color{white}First Render};}
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidMount};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillMount};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}getInitialState};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (E) at (.5,5.5) {\color{white}getDefaultProps};
+				\draw[->,graphorange,decorate] (B) -- (A);
+				\draw[->,graphorange,decorate] (C) -- (B);
+				\draw[->,graphorange,decorate] (D) -- (C);
+				\draw[->,graphorange,decorate] (E) -- (D);
 			\end{tikzpicture}
 			\caption{Lifecycle first render}%
 			\label{fig:lifecyclefirstrender}%
@@ -661,16 +687,28 @@
 		
 		\begin{figure}
 			\centering
-			\begin{tikzpicture}[every node/.style={anchor=south west},>=latex]
-				\node[draw,minimum width=5cm,minimum height=5.5cm] at (0,0) {};
-				\node[draw=floworange,fill=floworange,minimum width=5cm,minimum height=1cm] at (0,5.5) {\color{white}State Change};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidUpdate};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillUpdate};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}shouldComponentUpdate};
-				\draw[->,thick,floworange] (B) -- (A);
-				\draw[->,thick,floworange] (C) -- (B);
-				\draw[->,thick,floworange] (D) -- (C);
+			%\begin{tikzpicture}[every node/.style={anchor=south west},>=latex]
+				%\node[draw,minimum width=5cm,minimum height=5.5cm] at (0,0) {};
+				%\node[draw=floworange,fill=floworange,minimum width=5cm,minimum height=1cm] at (0,5.5) {\color{white}State Change};
+				%\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidUpdate};
+				%\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
+				%\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillUpdate};
+				%\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}shouldComponentUpdate};
+				%\draw[->,thick,floworange] (B) -- (A);
+				%\draw[->,thick,floworange] (C) -- (B);
+				%\draw[->,thick,floworange] (D) -- (C);
+			%\end{tikzpicture}
+			\begin{tikzpicture}[every node/.style={decorate,draw,anchor=south west},>=latex,decoration={random steps,segment length=1mm,amplitude=0.5pt},ultra thick]
+				{\ECFJD
+				\node[draw,minimum width=5cm,minimum height=5.55cm] at (0,0) {};
+				\node[draw=graphorange,fill=graphorange,minimum width=5cm,minimum height=1cm] at (0,5.5) {\color{white}State Change};}
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidUpdate};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillUpdate};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}shouldComponentUpdate};
+				\draw[->,graphorange,decorate] (B) -- (A);
+				\draw[->,graphorange,decorate] (C) -- (B);
+				\draw[->,graphorange,decorate] (D) -- (C);
 			\end{tikzpicture}
 			\caption{Component state changed lifeCycle}%
 			\label{fig:changedlifecycle}%
@@ -690,18 +728,32 @@
 		
 		\begin{figure}
 			\centering
-			\begin{tikzpicture}[every node/.style={anchor=south west},>=latex]
-				\node[draw,minimum width=5cm,minimum height=6.75cm] at (0,0) {};
-				\node[draw=floworange,fill=floworange,minimum width=5cm,minimum height=1cm] at (0,6.75) {\color{white}Props Change};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidUpdate};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillUpdate};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}shouldComponentUpdate};
-				\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4.5cm, minimum height=.75cm] (E) at (.25,5.5) {\color{white}componentWillRecieveProps};
-				\draw[->,thick,floworange] (B) -- (A);
-				\draw[->,thick,floworange] (C) -- (B);
-				\draw[->,thick,floworange] (D) -- (C);
-				\draw[->,thick,floworange] (E) -- (D);
+			%\begin{tikzpicture}[every node/.style={anchor=south west},>=latex]
+				%\node[draw,minimum width=5cm,minimum height=6.75cm] at (0,0) {};
+				%\node[draw=floworange,fill=floworange,minimum width=5cm,minimum height=1cm] at (0,6.75) {\color{white}Props Change};
+				%\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidUpdate};
+				%\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
+				%\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillUpdate};
+				%\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}shouldComponentUpdate};
+				%\node[draw=flowblue,fill=flowblue,rounded corners,minimum width=4.5cm, minimum height=.75cm] (E) at (.25,5.5) {\color{white}componentWillRecieveProps};
+				%\draw[->,thick,floworange] (B) -- (A);
+				%\draw[->,thick,floworange] (C) -- (B);
+				%\draw[->,thick,floworange] (D) -- (C);
+				%\draw[->,thick,floworange] (E) -- (D);
+			%\end{tikzpicture}
+			\begin{tikzpicture}[every node/.style={decorate,draw,anchor=south west},>=latex,decoration={random steps,segment length=1mm,amplitude=0.5pt},ultra thick]
+				{\ECFJD
+				\node[draw,minimum width=5cm,minimum height=6.8cm] at (0,0) {};
+				\node[draw=graphorange,fill=graphorange,minimum width=5cm,minimum height=1cm] at (0,6.75) {\color{white}Props Change};}
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidUpdate};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillUpdate};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}shouldComponentUpdate};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4.5cm, minimum height=.75cm] (E) at (.25,5.5) {\color{white}componentWillRecieveProps};
+				\draw[->,graphorange,decorate] (B) -- (A);
+				\draw[->,graphorange,decorate] (C) -- (B);
+				\draw[->,graphorange,decorate] (D) -- (C);
+				\draw[->,graphorange,decorate] (E) -- (D);
 			\end{tikzpicture}
 			\caption{Pops change lifecycle}%
 			\label{fig:changelifecycle}%
