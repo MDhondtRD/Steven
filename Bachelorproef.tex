@@ -1,5 +1,5 @@
-\documentclass[pdftex,a4paper,10pt,twoside]{report}
-
+\documentclass[pdftex,a4paper,12pt,twoside]{report}
+\usepackage{apacite}
 \input{preamble}
 
 \begin{document}
@@ -9,7 +9,7 @@
 		\input{title}
 		
 		\begin{abstract}
-		 \lipsum[1-4]
+		 \input{samenvatting}
 		\end{abstract}
 		
 		\input{voorwoord}
@@ -20,19 +20,21 @@
 		
 		\listoftables
 		
-		\input{woordenlijst}
-		
 		\lstlistoflistings
+
+		
+
 	
 	\mainmatter
 		
-		\input{javascript}
-		%\input{grafiekskes}
-		
+	\input{javascript}
 	\input{react}
 	\input{reactnative}
+	\input{workrn}7
+	\input{conclusie}
+	\input{woordenlijst}
 	\backmatter
-		
+		%\bibliographystyle{apa}
 		\bibliographystyle{apa-good}
 		\bibliography{Bachelorproef}
 	

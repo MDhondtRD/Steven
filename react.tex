@@ -1,20 +1,21 @@
+
 \chapter{React}\label{ch:react}
 
 \section{Wat is React?}\label{sec:what}
 	
-	ReactJS of React is een JavaScript library gecreëerd door Facebook, React zou een oplossing bieden bij het ontwikkelen van complexe user interfaces met telkens veranderende datasets. Dit is geen onbelangrijke uitdaging en moet niet enkel onderhoudbaar zijn, maar ook schaalbaar zijn op het niveau van Facebook’s datasets.
+	ReactJS of React is een Javascript library gecreëerd door Facebook, React zou een oplossing bieden bij het ontwikkelen van complexe user interfaces met telkens veranderende datasets. Dit is geen onbelangrijke uitdaging en moet niet enkel onderhoudbaar zijn, maar ook schaalbaar zijn op het niveau van Facebook’s datasets.
 	
-	React werd geboren in de Facebook advertentie organisatie, waar men gebruik maakte van een traditionele client-side Model-View-Controller aanpak. Applicaties zoals deze maken normaal gezien gebruik van \hyperref[twdb]{two-way data binding} samen met renderen van het \hyperref[template]{template}. Telkens wanneer data objecten gewijzigd worden moet de pagina of een deel van de pagina opnieuw laden. In een kleine applicatie geeft dit geen merkbare problemen voor de performantie van de applicatie, maar hoe meer functionele uitbreidingen er aan de applicatie worden toegevoegd, hoe meer views en modellen de applicatie gaat bevatten. Deze zijn allemaal verbonden door een delicaat en onoverzichtelijk kluwen van code die de verbondenheid van views en modellen onderling bijhoudt. Dit wordt al snel enorm complex, moeilijk onderhoudbaar, moeilijk testbaar en niet-gebruiksvriendelijk omdat items die opgevraagd moeten worden vaak veel meer tijd vragen om gepresenteerd te kunnen worden.
+	React werd geboren in de Facebook advertentie organisatie, waar men gebruik maakte van een traditionele client-side Model-View-Controller aanpak. Applicaties zoals deze maken normaal gezien gebruik van \hyperref[twdb]{two-way data binding} samen met renderen van het \hyperref[template]{template}. Telkens wanneer data objecten gewijzigd worden moet de pagina of een deel van de pagina opnieuw laden. In een kleine performante applicatie geeft dit geen merkbare problemen, maar hoe meer functionele uitbreidingen er aan de applicatie worden toegevoegd, hoe meer views en modellen de applicatie gaat bevatten. Deze zijn allemaal verbonden door een delicaat en onoverzichtelijk kluwen van code die de verbondenheid van views en modellen onderling bijhoudt. Dit wordt al snel enorm complex, moeilijk onderhoudbaar, moeilijk testbaar en niet-gebruiksvriendelijk omdat items die opgevraagd moeten worden vaak veel meer tijd vragen om gepresenteerd te kunnen worden.
 	
-	React werd dus ontwikkeld om één welbepaald probleem te gaan oplossen, namelijk het tonen van data in de \hyperref[ui]{UI}. Als u denkt dat dat probleem reeds werd opgelost, bent u zeker niet verkeerd. Het verschil is dat React werd gecreëerd om grote schaalbare user interfaces, zoals die van Facebook en Instagram, met veel data die continu wijzigt te gaan behandelen. Dit soort interfaces kan gecreëerd worden en de data behandeling kan gebeuren via verschillende andere tools los van React, maar zorgen voor een hoop code en dus ook veel werk om te onderhouden en up-to-date te houden. Deze manier van werken werd reeds door Facebook zelf gebruikt want Facebook werd immers in 2004 gemaakt, 9 jaar voor React werd uitgebracht. React zorgt met andere woorden eerder voor een korte, overzichtelijke en onderhoudbare manier van werken.
+	React werd dus ontwikkeld om één welbepaald probleem te gaan oplossen, namelijk het tonen van data in de \hyperref[ui]{UI}. Als u denkt dat dat probleem reeds werd opgelost, bent u zeker niet verkeerd. Het verschil is dat React werd gecreëerd om grote schaalbare user interfaces, zoals die van Facebook en Instagram, met veel data die continu wijzigt, te gaan behandelen. Dit soort interfaces kan gecreëerd worden en de data behandeling kan gebeuren via verschillende tools los van React, maar zorgen voor een hoop code en dus ook veel werk om te onderhouden en up-to-date te houden. Deze manier van werken werd reeds door Facebook zelf gebruikt want Facebook werd immers in 2004 gemaakt, 9 jaar voor React werd uitgebracht. React zorgt met andere woorden eerder voor een korte, overzichtelijke en onderhoudbare manier van werken.
 	
-	React veranderde de manier waarop deze applicaties gecreëerd werden en voerde een aantal gewaagde veranderingen door op gebied van Web ontwikkeling. Toen React in mei 2013 op de markt werd gebracht was er heel wat commotie in de Web ontwikkeling community. Heel wat ontwikkelaars waren geïnteresseerd en sterk onder de indruk van de React aanpak maar sommigen waren niet tevreden met wat React deed. React daagde namelijk een aantal van de conventies uit, die reeds standaarden geworden zijn voor JavaScript frameworks en libraries.
+	React veranderde de manier waarop deze applicaties gecreëerd werden en voerde een aantal gewaagde veranderingen door op gebied van webontwikkeling. Toen React in mei 2013 op de markt werd gebracht, was er heel wat commotie in de webontwikkeling community. Heel wat ontwikkelaars waren geïnteresseerd en sterk onder de indruk van de React aanpak maar sommigen waren niet tevreden met wat React deed. React daagde namelijk een aantal van de conventies uit, die reeds standaarden geworden zijn voor Javascript frameworks en libraries.
 	
-	De ingenieurs bij Facebook hebben met React een mentaliteits wijziging doorgevoerd op gebied van web-ontwikkeling en het maken van schaalbare en onderhoudbare JavaScript applicaties. Ze voorzien React van een hele hoop nieuwe features die het bouwen van single-page applicaties toegankelijk maakt voor ontwikkelaars met verschillende kennis niveaus. \citep{gackenheimer:react}
+	De ingenieurs bij Facebook hebben met React een mentaliteitswijziging doorgevoerd op gebied van webontwikkeling en het maken van schaalbare en onderhoudbare Javascript applicaties. Ze voorzien React van een hele hoop nieuwe features die het bouwen van single-page applicaties toegankelijk maakt voor ontwikkelaars met verschillende kennisniveaus. \citep{gackenheimer:react}
 	
 \section{React en frameworks}
 	
-	React wordt door velen vaak beschouwd als een volwaardig JavaScript framework vergelijkbaar met andere frameworks zoals Backbone, KnockoutJS, AngularJS, Ember, of één van de vele \hyperref[mvc]{MVC} frameworks die bestaan.
+	React wordt door velen vaak beschouwd als een volwaardig Javascript framework vergelijkbaar met andere frameworks zoals Backbone, KnockoutJS, AngularJS, Ember, of één van de vele \hyperref[mvc]{MVC} frameworks die bestaan.
 	
 	\begin{figure}
 		\centering
@@ -58,7 +59,7 @@
 	
 	Simpelweg beschouwd men React als de view in MV* - frameworks. Zoals eerder vermeld is React een manier om de \hyperref[ui]{UI} van een applicatie te beschrijven en een mechanisme om die \hyperref[ui]{UI} aan te passen wanneer de data wijzigt. React bestaat uit declaratieve componenten die samen een interface beschrijven en een data-binding mechanisme die niet observeerbaar is (niet \hyperref[twdb]{two-way binding}). React is ook heel makkelijk te manipuleren omdat je de gecreëerde componenten kan nemen en combineren met andere componenten, die telkens werken zoals je verwacht. Dit komt omdat React enorm schaalbaar is.
 	
-	In het artikel \cite{Harrington:React} worden 2 JavaScript frameworks vergeleken met React in verschillende browsers. \citeauthor{Harrington:React} schreef in elk framework een gelijkaardige applicatie (zie \prettyref{tbl:perfcompharrington}) die door een lijst van 1000 items loopt en elk item in de lijst weergeeft. De items worden vervolgens in een niet-gesorteerde lijst geplaatst op een webpagina. Wanneer op de \emph{run} link (tekst-label met milliseconden in) geklikt wordt, wordt de tijd opgeslagen en wanneer de 1000 elementen geladen zijn wordt opnieuw de tijd opgeslagen. De laatste tijd wordt van de eerste afgetrokken en de uitkomst wordt weergegeven op het scherm. Voor de test werd bij elk van de twee frameworks en React, 10x de lijst geladen en werd de tijd bijgehouden in tabellen, dit werd voor drie browsers herhaald.
+	In het artikel \cite{Harrington:React} worden 2 Javascript frameworks vergeleken met React in verschillende browsers. \citeauthor{Harrington:React} schreef in elk framework een gelijkaardige applicatie (zie \prettyref{tbl:perfcompharrington}) die door een lijst van 1000 items loopt en elk item in de lijst weergeeft. De items worden vervolgens in een niet-gesorteerde lijst geplaatst op een webpagina. Wanneer op de \emph{run} link (tekst-label met milliseconden in) geklikt wordt, wordt de tijd opgeslagen en wanneer de 1000 elementen geladen zijn, wordt opnieuw de tijd opgeslagen. De laatste tijd wordt van de eerste afgetrokken en de uitkomst wordt weergegeven op het scherm. Voor de test werd bij elk van de twee frameworks en React, 10x de lijst geladen en werd de tijd bijgehouden in tabellen, dit werd voor drie browsers herhaald.
 	
 	\begin{table}
 		\scriptsize
@@ -86,7 +87,7 @@
 				adorable white cookie & quaint green mouse & small white cookie & quaint purple keyboard \\
 			\bottomrule
 		\end{tabular}
-	\caption{Performance Comparison for React, Angular and Knockout, by Chris Harrington}
+	\caption{Performance vergelijking voor React, Angular and Knockout, \citep{Harrington:React}}
 	\label{tbl:perfcompharrington}
 	\end{table}
 	
@@ -162,7 +163,7 @@
 				\end{customlegend}
 			\end{tikzpicture}
 		}
-		\caption{Resultaat van performance test door  Chrome 39.0.2171.95}%
+		\caption{Performance test door \citeauthor{Harrington:React} Chrome 39.0.2171.95}%
 		\label{fig:reschrome}%
 	\end{figure}
 	
@@ -235,7 +236,7 @@
 				\end{customlegend}
 			\end{tikzpicture}
 		}
-		\caption{Resultaat van performance test door Chris Harrington voor Firefox 34.0.5}%
+		\caption{Performance test door \citeauthor{Harrington:React} voor Firefox 34.0.5}%
 		\label{fig:resfirefox}%
 	\end{figure}
 	
@@ -308,25 +309,25 @@
 				\end{customlegend}
 			\end{tikzpicture}
 		}
-		\caption{Resultaat van performance test door Chris Harrington voor Safari 7.0.2}%
+		\caption{Performance test door \citeauthor{Harrington:React} voor Safari 7.0.2}%
 		\label{fig:ressafari}%
 	\end{figure}
 	
 \section{React concepten}\label{section:rjsconcepten}
 		
-	De React API is klein en daardoor gemakkelijk aan te leren. Gemakkelijk wil niet zeggen dat het herkenbaar is. Eerst moeten er een aantal concepten en terminologie worden uitgelegd.
+	De React API is klein en daardoor gemakkelijk aan te leren. Gemakkelijk wil niet zeggen dat het herkenbaar is. Eerst moet er een aantal concepten en terminologie worden uitgelegd.
 
 \subsection{Componenten}
 	
-	Componenten zijn de basis van React en de view van de applicatie. In \prettyref{code:comp} wordt een voorbeeld gegeven van een component in React. Let goed op bij de \emph{render} functie, deze geeft een \hyperref[html]{HTML} tag terug. Wanneer deze zal aangeroepen worden zal die de tekst ``Hello world'', laten verschijnen op de \hyperref[html]{HTML} pagina.
+	Componenten zijn de basis van React en de view van de applicatie. In \prettyref{code:comp} wordt een voorbeeld gegeven van een component in React. Let goed op bij de \emph{render} functie, deze geeft een \hyperref[html]{HTML} tag terug. Wanneer deze zal aangeroepen worden, zal die de tekst ``Hello world'', laten verschijnen op de \hyperref[html]{HTML} pagina.
 	
 	\reactcode{code/componenten.js}{Component in ReactJS}{code:comp}
 
 \subsection{Virtual DOM}\label{section:virtualdom}
 	
-	Dit is waarschijnlijk het meest belangrijke concept van React. Het virtuele DOM is de oplossing voor het probleem die het DOM stelt, namelijk dat het (nog) niet aangepast werd voor het weergeven van dynamische data. Met JavaScript en JQuery kon je als ontwikkelaar wel een oplossing voor dit probleem vinden, maar dat bleek zowieso een hele hoop werk en er kwam heel wat code en denkwerk bij kijken. Dit was uiteraard het probleem waarvoor Facebook React heeft ontwikkeld. Het virtuele DOM is geen nieuw concept en bestaat al eerder dan React, React is wel ontwikkeld met het concept van het virtuele DOM in het achterhoofd.
+	Dit is waarschijnlijk het meest belangrijke concept van React. Het virtuele DOM is de oplossing voor het probleem die het DOM stelt, namelijk dat het (nog) niet aangepast werd voor het weergeven van dynamische data. Met Javascript en JQuery kon je als ontwikkelaar wel een oplossing voor dit probleem vinden, maar dat bleek zowieso een hele hoop werk en er kwam heel wat code en denkwerk bij kijken. Dit was uiteraard het probleem waarvoor Facebook React heeft ontwikkeld. Het virtuele DOM is geen nieuw concept en bestaat al eerder dan React. React is wel ontwikkeld met het concept van het virtuele DOM in het achterhoofd.
 	
-	Het virtuele DOM wordt ontwikkeld bovenop het DOM, het gaat uiteraard het DOM gaan behandelen maar doet dit zo weinig en zo efficiënt mogelijk, door te werken met een light weight kopie van het DOM. Wanneer de data wordt gewijzigd in de kopie wordt er gekeken welke delen in het DOM vervangen moeten worden. Er wordt opzoek gegaan naar de kortste manier om de gewijzigde delen te gaan vervangen. Deze manier gaat veel sneller dan direct te werken met het DOM, omdat niet alle delen van het DOM die belastend zijn voor de browser her-in-ge-laden moeten worden.\citep{gackenheimer:react}
+	Het virtuele DOM wordt ontwikkeld bovenop het DOM, het zal uiteraard het DOM gaan behandelen. Het doet dit echter zo weinig en zo efficiënt mogelijk, door te werken met een light weight kopie van het DOM. Wanneer de data wordt gewijzigd in de kopie wordt er gekeken welke delen in het DOM vervangen moeten worden. Er wordt opzoek gegaan naar de kortste manier om de gewijzigde delen te gaan vervangen. Deze manier gaat veel sneller dan direct te werken met het DOM, omdat niet alle delen van het DOM die belastend zijn voor de browser her-in-ge-laden moeten worden.\citep{gackenheimer:react}
 	
 	Om dit te realiseren maakt React gebruik van diff algoritmes, event delegation en rendering.
 	
@@ -334,7 +335,7 @@
 		
 		React gaat via een aantal algoritmen op zoek naar het minimum aantal stappen die nodig zijn om van de vorige versie van het DOM naar een nieuwere versie te gaan.
 		\begin{itemize}
-			\item Level per level: React gaat proberen om op level niveau wijzigingen aan te brengen, dit gaat de complexiteit drastisch verminderen en brengt weinig verlies met zich mee omdat het zeer zeldzaam is in web applicaties dat componenten verplaatst worden naar een ander niveau in de boom structuur. Zie \prettyref{fig:levelperlevel}.
+			\item Level per level: React gaat proberen om op level niveau wijzigingen aan te brengen. Dit gaat de complexiteit drastisch verminderen en brengt weinig verlies met zich mee. Het is in web-applicaties zeer zeldzaam dat componenten verplaatst worden naar een ander niveau in de boom structuur. Zie \prettyref{fig:levelperlevel}.
 			\begin{figure}
 				\centering
 				\begin{tikzpicture}[decoration={random steps,segment length=1mm,amplitude=0.5pt},ultra thick,every node/.style={draw,circle,decorate,inner sep=5}]
@@ -380,7 +381,7 @@
 				\caption{Level per level aanpassen}%
 				\label{fig:levelperlevel}%
 			\end{figure}
-			\item Lijsten: Wanneer een component bij een éénmalige iteratie 5 andere componenten bevat wordt het moeilijk om in het midden van die lijst een nieuwe component toe te voegen. React gaat standaard een associatie maken tussen het eerste component van de eerste lijst en het eerste component van de tweede lijst, etc. Als ontwikkelaar kan je React helpen door een sleutel attribuut toe te voegen zodat React een beter begrip krijgt over de mapping van beide lijsten.
+			\item Lijsten: Wanneer een component bij een eenmalige iteratie 5 andere componenten bevat, wordt het moeilijk om in het midden van die lijst een nieuwe component toe te voegen. React gaat standaard een associatie maken tussen het eerste component van de eerste lijst en het eerste component van de tweede lijst, etc. Als ontwikkelaar kan je React helpen door een sleutelattribuut toe te voegen zodat React een beter begrip krijgt over de mapping van beide lijsten.
 			\begin{figure}
 				\centering
 				\begin{tikzpicture}[decoration={random steps,segment length=1mm,amplitude=0.5pt},ultra thick,every node/.style={draw,circle,decorate,inner sep=5}]
@@ -415,20 +416,20 @@
 					\draw[decorate] (L) -- (R) (M) -- (S) (N) -- (T) (P) -- (U) (Q) -- (V);
 					\node[draw=none,rectangle] at (7.00,2.25) {Met keys};
 				\end{tikzpicture}
-				\caption{Lijsten}%
+				\caption{Lijsten aanpassen}%
 				\label{fig:lijsten}%
 			\end{figure}
 		\end{itemize}
 	
 	\subsubsection{Event delegation}
 		
-		Toevoegen van event listeners aan \hyperref[dom]{DOM} nodes is enorm traag en gaat veel geheugen gebruiken. React gebruikt hiervoor een populaire techniek genaamd ``event delegation''. Bij \emph{event delegation} wordt een \emph{event} getriggerd op de parent node en niet op elke child node. Bijvoorbeeld, een \emph{Onclick listener} op een niet gesorteert lijst ($<$ul$>$) element in plaats van op elk lijst item ($<$li$>$) element in de lijst . Wanneer het event wordt getriggerd gaat de parent nagaan welk child element wordt aangeklikt en op basis van het \emph{id}, die React automatisch toevoegd aan elk child element, de nodige wijzigingen doorvoeren.
+		Toevoegen van event listeners aan \hyperref[dom]{DOM} nodes is enorm traag en gaat veel geheugen gebruiken. React gebruikt hiervoor een populaire techniek:``event delegation''. Bij \emph{event delegation} wordt een \emph{event} getriggerd op de parent node en niet op elke child node. Bijvoorbeeld, een \emph{Onclick listener} op een niet-gesorteerde lijst ($<$ul$>$) element in plaats van op elk lijst item ($<$li$>$) element in de lijst . Wanneer het event wordt getriggerd gaat de parent nagaan welk child element wordt aangeklikt en op basis van het \emph{id}, die React automatisch toevoegd aan elk child element, de nodige wijzigingen doorvoeren.
 	
 	\subsubsection{Rendering}
 		
-		Wanneer \emph{setState} wordt aangeroepen op een component, zal React dat component aanduiden als ``dirty''. Aan het einde van elke event loop zal React alle ``dirty'' componenten opnieuw laden. Dit betekent dat er tijdens een event loop, er slechts 1 moment is dat het \hyperref[dom]{DOM} wordt ge-update. Dit is een belangrijke eigenschap om performante applicaties te schrijven, maar is extreem moeilijk te benaderen in gewone JavaScript code, React regelt dit standaard voor de ontwikkelaar.
+		Wanneer \emph{setState} wordt aangeroepen op een component, zal React dat component aanduiden als ``dirty''. Aan het einde van elke event loop zal React alle ``dirty'' componenten opnieuw laden. Dit betekent dat er tijdens een event loop, slechts 1 moment is dat het \hyperref[dom]{DOM} wordt geüpdatet. Dit is een belangrijke eigenschap om performante applicaties te schrijven, maar is extreem moeilijk te benaderen in gewone Javascript code. React regelt dit standaard voor de ontwikkelaar.
 		
-		Het voordeel is dat \emph{setState} niet alleen op het root element kan opgeroepen worden, maar op elk child element aanwezig in de applicatie. Wanneer hierop een wijziging gebeurt moet niet het volledige \hyperref[dom]{DOM} worden overschreven maar slechts een deel van de tree.
+		Het voordeel is dat \emph{setState} niet alleen op het root element kan opgeroepen worden, maar op elk child element dat aanwezig is in de applicatie. Wanneer hierop een wijziging gebeurt, moet niet het volledige \hyperref[dom]{DOM} worden overschreven maar slechts een deel van de tree.\citep{freed:virtual}
 		
 		\begin{figure}
 			\centering
@@ -492,31 +493,31 @@
 			\label{fig:setstateflow}%
 		\end{figure}
 		
-		Deze technieken zijn niet nieuw en worden gebruikt door andere JavaScript libraries en frameworks:
+		Deze technieken zijn niet nieuw en worden gebruikt door andere Javascript libraries en frameworks:
 		
 		\begin{itemize}
-			\item \textbf{Virtual-dom by Matt Esch:} Een JavaScript virtual \hyperref[dom]{DOM} algoritme
-			\item \textbf{Mithril:} JavaScript Framework
+			\item \textbf{Virtual-dom by Matt Esch:} Een Javascript virtual \hyperref[dom]{DOM} algoritme
+			\item \textbf{Mithril:} Javascript Framework
 			\item \textbf{Bobril:} component georiënteerd framework geïnspireerd door React en Mithril.
 		\end{itemize}
 		
-		Wat React speciaal maakt hierin is dat wanneer je als ontwikkelaar de logische volgorde volgt die nodig is om een applicatie te bouwen in React, je dit allemaal standaard krijgt en zelf hiervoor niets hoeft te doen.
+		Wat React speciaal maakt hierin is dat als je als ontwikkelaar de logische volgorde respecteert die nodig is om een applicatie te bouwen in React, je dit allemaal standaard krijgt en zelf hiervoor niets hoeft te doen.
 	
-	\subsubsection{JSX}
+	\subsection{JSX}
 		
-		\hyperref[jsx]{JSX} is de transformatie laag van React om \hyperref[xml]{XML} syntax die gebruikt wordt om React componenten te schrijven om te zetten naar syntax die door React gebruikt wordt om elementen te renderen in JavaScript. Let op! Dit is geen verplicht onderdeel van React maar wordt sterk aangeraden om het te gebruiken. JSX maakt coderen veel eenvoudiger en leesbaarder, zo kan bijvoorbeeld \hyperref[html]{HTML} tags meegeven en aanvaard het aangepaste React klassen.
+		\hyperref[jsx]{JSX} is de transformatie laag van React om \hyperref[xml]{XML} syntax die gebruikt wordt om React componenten te schrijven, om te zetten naar syntax die door React gebruikt wordt om elementen te laten renderen in Javascript. Let op! Dit is geen verplicht onderdeel van React maar het gebruik wordt sterk aangeraden. JSX maakt coderen veel eenvoudiger en leesbaarder, zo kunnen \hyperref[html]{HTML} tags rechtstreeks worden aangemaakt en aanvaardt het aangepaste React klassen. In \prettyref{code:jsx} wordt een component aangemaakt met JSX-syntax.
 		
 		\reactcode{code/jsx.js}{JSX component in React}{code:jsx}
 	
-	\subsubsection{Properties}
+	\subsection{Properties}
 		
-		Properties zijn een set van opties die een component bevat en worden aangeroepen in React als \emph{this.props}, een gewoon JavaScript object in React. Properties zullen tijdens de lifecycle van een component niet wijzigen, ze zijn \hyperref[immutable]{immutable}. Wanneer een ontwikkelaar iets wil wijzigen aan een component zal hij de \emph{state} van een object moeten wijzigen.
+		Properties zijn een set van opties die een component bevat en worden aangeroepen in React als \emph{this.props}, een gewoon Javascript object in React. Properties zullen tijdens de lifecycle van een component niet wijzigen, ze zijn \hyperref[immutable]{immutable}. Wanneer een ontwikkelaar iets wil wijzigen aan een component zal hij de \emph{state} van een object moeten wijzigen.
 	
-	\subsubsection{State}
+	\subsection{State}
 		
-		\emph{State} is een set die geïnitialiseerd kan worden op elke component en die gewijzigd kan worden doorheen de lifecycle van van dat component. De \emph{state} mag niet gewijzigd worden buiten het component tenzij door een parent component. Het is aangewezen om zo weinig mogelijk \emph{state} objecten te gebruiken op de componenten, hoe meer state objecten geïnitialiseerd en aangepast worden hoe groter de complexiteit van de componenten wordt.
+		\emph{State} is een set die kan geïnitialiseerd worden op elke component en die gewijzigd kan worden doorheen de lifecycle van van dat component. De \emph{state} mag niet gewijzigd worden buiten het component tenzij door een parent component. Het is aangewezen om zo weinig mogelijk \emph{state} objecten te gebruiken op de componenten, hoe meer state objecten geïnitialiseerd en aangepast worden hoe groter de complexiteit van de componenten.
 	
-	\subsubsection{Flux}
+	\subsection{Flux}
 		
 		Flux is een project dat zeer nauw verbonden is met React. Het is belangrijk om te weten hoe het werkt met React. Flux is de Facebook applicatie architectuur voor hoe data werkt met React componenten op een logische en georganiseerde manier. Flux is geen \hyperref[mvc]{MVC} architectuur omdat het niet werkt met bi-directionele data flow (\hyperref[twdb]{Two-way data binding}). Flux is daarentegen wel essentieel voor React omdat het helpt met het gebruik van React componenten op de manier waarop ze voorzien zijn om gebruikt te worden. Flux doet dit door een uni-directionele data flow (one-way data binding) te gaan creëren die door drie stukken van de flux architectuur wordt geleid namenlijk de \emph{dispatcher}, de \emph{stores} en uiteindelijk de React View. Flux is essentieel in het bouwen van \textbf{webapplicaties} met React en zal niet verder aan bod komen in deze scriptie.
 
@@ -526,13 +527,13 @@
 	
 	\subsection{React \emph{createClass}}
 		
-		In het hoofdstuk over React concepten (\prettyref{section:rjsconcepten}) werd aangehaald dat componenten de basis vormen van een React applicatie. De methode \emph{React.createClass} zorgt ervoor dat een nieuwe component wordt aangemaakt, deze methode moet verplicht de methode \emph{render()} overschrijven omdat deze het object, meestal in \hyperref[html]{HTML} vorm weergeeft. De \emph{render()} methode zal in \prettyref{section:render} verder toegelicht worden.
+		In het hoofdstuk over React concepten (\prettyref{section:rjsconcepten}) werd aangehaald dat componenten de basis vormen van een React applicatie. De methode \emph{React.createClass} zorgt ervoor dat een nieuwe component wordt aangemaakt, deze methode moet verplicht de methode \emph{render()} overschrijven omdat deze het object, meestal in \hyperref[html]{HTML} vorm weergeeft. De \emph{render()} methode zal in \prettyref{section:rjsrender} verder toegelicht worden.
 		
 		\reactcode{code/mycomponent.js}{CreateClass voorbeeld ReactJS}{code:mycomponent}
 		
 		In \prettyref{code:mycomponent} wordt een basis object \emph{`MyComponent'} aangemaakt via de methode \emph{React.createClass} door de \emph{render()} methode te overschrijven zal een \emph{<div>} element aangemaakt worden die de tekst ``Hello world'' op het scherm afprint. Op lijn 8 wordt \emph{React.render()} methode opgeroepen die het object zal creëren en aan het \hyperref[dom]{DOM} zal toevoegen als child node van de node met \emph{id = container}.
 		
-		Wanneer een waarde aan het component moet worden doorgegeven gaan we volgende syntax zoals \prettyref{code:propertyname}. Wanneer in de methode \emph{React.render} het object \emph{myComponent} wordt aangemaakt geven we een \emph{property `name'} mee. In \emph{myComponent} wordt verwezen naar de \emph{property name} door gebruik te maken van ``\{this.props.name\}'' om een property op te roepen.
+		Wanneer een waarde aan het component moet worden doorgegeven krijgen we syntax zoals \prettyref{code:propertyname}. Wanneer in de methode \emph{React.render} het object \emph{myComponent} wordt aangemaakt geven we een \emph{property `name'} mee. In \emph{myComponent} wordt verwezen naar de \emph{property name} door gebruik te maken van ``\{this.props.name\}'' om een property op te roepen.
 		
 		\reactcode{code/propertyname.js}{Property aan een component toevoegen}{code:propertyname}
 		
@@ -562,7 +563,7 @@
 				\label{fig:mapconsole}%
 			\end{figure}
 			\item \emph{React.Children.forEach( children, myFn [, context])}: \emph{forEach} functie werkt net zoals \emph{map} functie maar geeft geen object terug. Deze functie zal enkel de lijst doorlopen en een actie uitvoeren op elk child object.
-			\item \emph{React.Children.count( children )}: de \emph{count} methode zal het aantal child objecten in de lijst children terug geven.
+			\item \emph{React.Children.count( children )}: de \emph{count} methode zal het aantal child objecten in de lijst children teruggeven.
 		\end{itemize}
 	
 	\subsection{React \emph{CreateElement}}
@@ -573,11 +574,11 @@
 			\item[] \emph{React.createElement( type, [ props [, children … ]] )}
 		\end{itemize}
 		
-		Een element wordt gecreëerd met minstens één, en optioneel drie argumenten. Een string type, optioneel een lijst van properties en optioneel een lijst van child objecten.
+		Een element wordt gecreëerd met minstens één en optioneel drie argumenten: een string type, optioneel een lijst van properties en optioneel een lijst van child objecten.
 		
 		\reactcode{code/createelement.js}{Create element in component}{code:createelement}
 		
-		In \prettyref{code:createelement} wordt op lijn 4 een \emph{<div>} element expliciet gecreëerd terwijl eenzelfde functie op lijn 11 wordt aangeroepen met als type een object van \emph{MyComponent}. In dit voorbeeld lijkt het overbodig om de functie op te roepen om een \emph{<div>} element aan te maken maar wanneer de elementen gaan nesten en de complexiteit van de \hyperref[ui]{UI} begint te stijgen is het aangeraden om met \emph{ReactElementen} te gaan werken.
+		In \prettyref{code:createelement} wordt op lijn 4 een \emph{<div>} element expliciet gecreëerd terwijl eenzelfde functie op lijn 11 wordt aangeroepen met als type een object van \emph{MyComponent}. In dit voorbeeld lijkt het overbodig om de functie op te roepen om een \emph{<div>} element aan te maken maar wanneer de elementen gaan nesten en de complexiteit van de \hyperref[ui]{UI} begint te stijgen, is het aangeraden om met \emph{ReactElementen} te gaan werken.
 	
 \section{React componenten}
 	
@@ -588,21 +589,21 @@
 		Een React component kan op verschillende manieren aangemaakt worden, hieronder vindt u twee voorbeelden van de meest gebruikte manieren.
 		
 		\begin{itemize}
-			\item Voorbeeld 1: \emph{React.Component} als super klasse, maak een klasse aan die overerft van \emph{React.Component}. Overschrijf \textbf{altijd} de \emph{render()} methode (zie \prettyref{code:vb1}).
+			\item Voorbeeld 1: \emph{React.Component} als super klasse, maakt een klasse aan die overerft van \emph{React.Component}. Overschrijf \textbf{altijd} de \emph{render()} methode (zie \prettyref{code:vb1}).
 			\reactcode{code/vb1.js}{Component als super klasse}{code:vb1}
-			\item Voorbeeld 2: maak een variabele die de methode \emph{React.createClass} aanroept, deze methode geeft een object weer van type \emph{React.Component} met eigen implementatie (zie \prettyref{code:vb2}). Deze manier is de meest gebruikte manier om een component aan te maken.
+			\item Voorbeeld 2: maakt een variabele die de methode \emph{React.createClass} aanroept, deze methode geeft een object weer van type \emph{React.Component} met eigen implementatie (zie \prettyref{code:vb2}). Deze manier is de meest gebruikte om een component aan te maken.
 			\reactcode{code/vb2.js}{Component als variabele}{code:vb2}
 		\end{itemize}
 	
 	\subsection{State}
 		
-		De State van een property kan gewijzigd worden door de functie \emph{setState} aan te roepen in een component. Deze functie kan een andere functie aanroepen of een object weergegeven die de state van de component wijzigt. Wanneer \emph{setState} aangeroepen wordt, komt het nieuwe object in de React update queue, het mechanisme die React gebruikt om wijzigingen te behandelen. (Zie Virtual DOM, Rendering)
+		De State van een property kan gewijzigd worden door de functie \emph{setState} aan te roepen in een component. Deze functie kan een andere functie aanroepen of een object weergegeven die de state van de component wijzigt. Wanneer \emph{setState} aangeroepen wordt, komt het nieuwe object in de React update queue, het mechanisme die React gebruikt om wijzigingen te behandelen.
 		
 		Door deze manier van werken moet men als ontwikkelaar rekening houden met een aantal zaken wanneer \emph{setState} wordt aangeroepen. Zo is er geen enkele garantie dat de updates in een bepaalde volgorde zullen gebeuren. Wanneer er een afhankelijkheid is voor het updaten van een bepaalde property kan dit via een Callback functie worden doorgegeven die optioneel wordt meegegeven aan \emph{setState}. Daarnaast is het aangewezen om de state niet te wijzigen met de ``dot-notatie'' \emph{this.state}, en deze enkel te gebruiken om de state op te roepen. Het idee hierachter is dat de ontwikkelaar het state object als immutable moet beschouwen en enkel het \emph{setState} proces van React de wijzigingen aan de state controleert.
 	
-	\subsection{Specificatie functies en component LifeCycle}
+	\subsection{Specificatie functies en component Lifecycle}
 		
-		Specificatie functies zijn functies die verplicht of optioneel kunnen worden toegevoegd aan componenten wanneer ze worden geinitialiseerd, sommigen ervan zijn lifecycle functies. Er zijn drie soorten lifecycles mogelijk op een component:
+		Specificatie functies zijn functies die verplicht of optioneel kunnen worden toegevoegd aan componenten wanneer ze worden geïnitialiseerd, sommigen ervan zijn lifecycle functies. Er zijn drie soorten lifecycles mogelijk op een component:
 		
 		\begin{itemize}
 			\item De eerste keer wanneer een component aan het DOM wordt toegevoegd.
@@ -639,17 +640,17 @@
 				\draw[->,graphorange,decorate] (D) -- (C);
 				\draw[->,graphorange,decorate] (E) -- (D);
 			\end{tikzpicture}
-			\caption{Lifecycle first render}%
+			\caption{Lifecycle: eerste maal op het DOM }%
 			\label{fig:lifecyclefirstrender}%
 		\end{figure}
 	
 	\subsubsection{Render}	\label{section:rjsrender}
 		
-		Zoals reeds een aantal keren vermeld moet elke component een render functie bevatten. Deze functie aanvaardt een \emph{ReactElement} en voorziet een container locatie waar het component zal toegevoegd worden aan het DOM.
+		Zoals reeds een aantal keren is vermeld,moet elke component een render functie bevatten. Deze functie aanvaardt een \emph{ReactElement} en voorziet een container locatie waar het component zal toegevoegd worden aan het DOM.
 	
 	\subsubsection{getInitialState}
 		
-		Deze functie zal een object teruggeven, de inhoud van dit object zal de \emph{state} van het component \emph{setten} wanneer het voor de eerste keer geinitialiseerd wordt.
+		Deze functie zal een object teruggeven, de inhoud van dit object zal de \emph{state} van het component \emph{setten} wanneer het voor de eerste keer geïnitialiseerd wordt.
 		
 		\reactcode{code/getinitialstate.js}{GetInitialState voorbeeld}{code:getinitialstate}
 		
@@ -657,15 +658,15 @@
 	
 	\subsubsection{Get Default Props}
 		
-		Wanneer een \emph{ReactClass} (component of element) voor het eerst wordt aangemaakt, wordt de methode \emph{getDefaultProps} éémalig aangeroepen om de properties op de component met default waarden te bevolken. Wanneer deze methode niet opgeroepen wordt zullen \emph{this.props} voorzien worden van \emph{null} waarden of de waarde die tijdens de initialisatie worden meegegeven. (<MyComponent name = \textquotedbl Steven\textquotedbl />).
+		Wanneer een \emph{ReactClass} (component of element) voor het eerst wordt aangemaakt, wordt de methode \emph{getDefaultProps} éémalig aangeroepen om de properties op de component met default waarden te bevolken. Wanneer deze methode niet opgeroepen wordt, zullen \emph{this.props} voorzien worden van \emph{null} waarden of de waarde die tijdens de initialisatie worden meegegeven. (<MyComponent name = \textquotedbl Steven\textquotedbl />).
 	
 	\subsubsection{Component Will Mount}
 		
-		\emph{ComponentWillMount} is een lifeCycle event die React gebruikt wanneer React het component neemt en op het \hyperref[dom]{DOM} plaatst. De methode wordt éénmaal aangeroepen vlak voor de \emph{render} methode van de component. Het unieke aan \emph{componentWillMount} is dat wanneer de ontwikkelaar \emph{setState} aanroept in de methode en de \emph{state} van het component wijzigt er niet opnieuw wordt ingeladen, maar dat de gewijzigde \emph{state} onmiddellijk zichtbaar is.
+		\emph{ComponentWillMount} is een lifeCycle event die React gebruikt wanneer React het component neemt en op het \hyperref[dom]{DOM} plaatst. De methode wordt éénmaal aangeroepen vlak voor de \emph{render} methode van de component. Het unieke aan \emph{componentWillMount} is dat wanneer de ontwikkelaar \emph{setState} aanroept in de methode en de \emph{state} van het component wijzigt, er niet opnieuw wordt ingeladen, maar dat de gewijzigde \emph{state} onmiddellijk zichtbaar is.
 	
 	\subsubsection{Component Did Mount}
 		
-		\emph{ComponentDidMount} is een methode die enkel aan de client kant wordt aangeroepen. De component bestaat en staat in het \hyperref[dom]{DOM}.
+		\emph{ComponentDidMount} is een methode die enkel aan de kant van de client wordt aangeroepen. De component bestaat en staat in het \hyperref[dom]{DOM}.
 	
 	\subsubsection{Mixin}
 		
@@ -700,23 +701,23 @@
 			%\end{tikzpicture}
 			\begin{tikzpicture}[every node/.style={decorate,draw,anchor=south west},>=latex,decoration={random steps,segment length=1mm,amplitude=0.5pt},ultra thick]
 				{\ECFJD
-				\node[draw,minimum width=5cm,minimum height=5.55cm] at (0,0) {};
-				\node[draw=graphorange,fill=graphorange,minimum width=5cm,minimum height=1cm] at (0,5.5) {\color{white}State Change};}
-				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidUpdate};
-				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
-				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillUpdate};
-				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}shouldComponentUpdate};
+				\node[draw,minimum width=6cm,minimum height=5.55cm] at (0,0) {};
+				\node[draw=graphorange,fill=graphorange,minimum width=6cm,minimum height=1cm] at (0,5.5) {\color{white}State Change};}
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=5cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidUpdate};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=5cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=5cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillUpdate};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=5cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}shouldComponentUpdate};
 				\draw[->,graphorange,decorate] (B) -- (A);
 				\draw[->,graphorange,decorate] (C) -- (B);
 				\draw[->,graphorange,decorate] (D) -- (C);
 			\end{tikzpicture}
-			\caption{Component state changed lifeCycle}%
+			\caption{LifeCycle : state gewijzigd}%
 			\label{fig:changedlifecycle}%
 		\end{figure}
 	
 	\subsubsection{Should Component Update}
 		
-		Elke keer wanneer er een wijziging gebeurd in de \emph{state} of de properties wordt deze functie aangeroepen. Deze functie is een mechanisme die gebruikt kan worden om het opnieuw laden (\emph{render()}) van de component over te slaan, wanneer de wijzigingen geen update nodig hebben.
+		Elke keer wanneer er een wijziging plaats vindt in de \emph{state} of de properties wordt deze functie aangeroepen. Deze functie is een mechanisme dat kan gebruikt worden om het opnieuw laden (\emph{render()}) van de component over te slaan, wanneer de wijzigingen geen update nodig hebben.
 	
 	\subsubsection{Component Will Update}
 		
@@ -743,22 +744,22 @@
 			%\end{tikzpicture}
 			\begin{tikzpicture}[every node/.style={decorate,draw,anchor=south west},>=latex,decoration={random steps,segment length=1mm,amplitude=0.5pt},ultra thick]
 				{\ECFJD
-				\node[draw,minimum width=5cm,minimum height=6.8cm] at (0,0) {};
-				\node[draw=graphorange,fill=graphorange,minimum width=5cm,minimum height=1cm] at (0,6.75) {\color{white}Props Change};}
-				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidUpdate};
-				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
-				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillUpdate};
-				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}shouldComponentUpdate};
-				\node[draw=graphlightblue,fill=graphlightblue,minimum width=4.5cm, minimum height=.75cm] (E) at (.25,5.5) {\color{white}componentWillRecieveProps};
+				\node[draw,minimum width=6cm,minimum height=6.8cm] at (0,0) {};
+				\node[draw=graphorange,fill=graphorange,minimum width=6cm,minimum height=1cm] at (0,6.75) {\color{white}Props Change};}
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=5cm, minimum height=.75cm] (A) at (.5,.5) {\color{white}componentDidUpdate};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=5cm, minimum height=.75cm] (B) at (.5,1.75) {\color{white}render};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=5cm, minimum height=.75cm] (C) at (.5,3) {\color{white}componentWillUpdate};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=5cm, minimum height=.75cm] (D) at (.5,4.25) {\color{white}shouldComponentUpdate};
+				\node[draw=graphlightblue,fill=graphlightblue,minimum width=5cm, minimum height=.75cm] (E) at (.5,5.5) {\color{white}componentWillRecieveProps};
 				\draw[->,graphorange,decorate] (B) -- (A);
 				\draw[->,graphorange,decorate] (C) -- (B);
 				\draw[->,graphorange,decorate] (D) -- (C);
 				\draw[->,graphorange,decorate] (E) -- (D);
 			\end{tikzpicture}
-			\caption{Pops change lifecycle}%
+			\caption{Lifecycle : properties gewijzigd}%
 			\label{fig:changelifecycle}%
 		\end{figure}
 	
 	\subsubsection{Component Will Recieve Props}
 		
-		Deze functie wordt aangeroepen vlak voor de component properties zal ontvangen, en wordt uitgevoerd elke keer als een property wijzigt, behalve bij de eerste keer dat de component aan het DOM wordt toegevoegd. Hier kan er steeds setState aanroepen zonder een extra update te moeten doen.
+		Deze functie wordt aangeroepen vlak voor de component properties zal ontvangen, en wordt uitgevoerd elke keer als een property wijzigt, behalve bij de eerste keer dat de component aan het DOM wordt toegevoegd. Hier kan men steeds setState aanroepen zonder een extra update te moeten doen.

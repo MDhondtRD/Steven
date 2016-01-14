@@ -1,44 +1,42 @@
-\chapter{Het huidige JavaScript landschap}\label{ch:javascriptland}
+\chapter{Het huidige Javascript landschap}\label{ch:Javascriptland}
 
-\section{Wat is JavaScript?}\label{sec:JavaScript}
+\section{Wat is Javascript?}\label{sec:Javascript}
 
-JavaScript is een dynamische programmeer taal die gebruikt wordt om webpagina's interactief te maken. Het wordt door de browser van de gebruiker zelf aanvaard en gedraaid, waardoor het geen constante downloads van een bepaalde webpagina nodig heeft. 
-JavaScript mag echter niet verward worden met Java, enkel de namen zijn gelijkaardig. Toch heeft JavaScript veel geleend bij andere talen zoals Java, Python en Perl : 
+Javascript is een dynamische programmeertaal die gebruikt wordt om webpagina's interactief te maken. Het wordt door de browser van de gebruiker zelf aanvaard en gedraaid, waardoor het geen constante downloads van een bepaalde webpagina nodig heeft. 
+Javascript mag echter niet verward worden met Java, enkel de namen zijn gelijkaardig. Toch heeft Javascript veel geleend bij andere talen zoals Java, Python en Perl : 
 	\begin{itemize}
 		\item \textbf{Java:} Syntax, primitieve waarden tegenover objecten
 		\item \textbf{Python en Perl:} strings, arrays en reguliere expressies
 	\end{itemize}
-\section{Client-side JavaScript}\label{sec:csjs}
-JavaScript wordt het vaakst gebruikt voor Client-side implementatie, de bedoeling is dat het \hyperref[script]{script} rechtstreeks in de \hyperref[html]{HTML} pagina aanwezig is of dat er verwezen wordt naar een JavaScript document.
-In de body van een \hyperref[html]{HTML} pagina kan gerefereerd worden naar een stuk JavaScript code, zoals in \prettyref{code:scriptjs}.
-	\reactcode{code/scriptjs.js}{JavaScript in HTML body}{code:scriptjs}
-	Wanneer er naar een aparte JavaScript document verwezen moet worden kan dat zoals in \prettyref{code:myscriptjs}. Het attribuut “src= ..” verwijst dan naar het JavaScript document die in de \hyperref[html]{HTML} pagina gebruikt moet worden.   
-	\reactcode{code/myscriptjs.js}{Verwijzing in HTML naar JavaScript file}{code:myscriptjs}
-	\section{Voordelen van JavaScript}
+\section{Client-side Javascript}\label{sec:csjs}
+Javascript wordt het vaakst gebruikt voor Client-side implementatie, de bedoeling is dat het \hyperref[script]{script} rechtstreeks in de \hyperref[html]{HTML} pagina aanwezig is of dat er verwezen wordt naar een Javascript document.
+In de body van een \hyperref[html]{HTML} pagina kan gerefereerd worden naar een stuk Javascript code, zoals in \prettyref{code:scriptjs}.
+	\reactcode{code/scriptjs.js}{Javascript in HTML body}{code:scriptjs}
+	Wanneer er naar een aparte Javascript document verwezen moet worden kan dat zoals in \prettyref{code:myscriptjs}. Het attribuut “src= ..” verwijst dan naar het Javascript document die in de \hyperref[html]{HTML} pagina gebruikt moet worden.   
+	\reactcode{code/myscriptjs.js}{Verwijzing in HTML naar Javascript file}{code:myscriptjs}
+	\section{Voordelen van Javascript}
 	
-	Het voornaamste voordeel van JavaScript is dat er onmiddellijk interactie kan gemaakt worden met de \hyperref[ui]{UI} op client-side niveau. Dit wil zeggen dat de interacties met server tot een minimum beperkt kunnen blijven. Het beste voorbeeld hiervoor is de validatie van gebruiker input. JavaScript kan onmiddellijk nagaan of een gebruiker een correct e-mail adres of telefoonnummer heeft ingegeven op basis van reguliere expressies zoals in \prettyref{code:validatie}. De waarde die werd ingegeven in het \hyperref[html]{HTML} document wordt onder heven aan een test door deze functie, er wordt getest of de waarde overeenkomt met het opgegeven patroon van hoe een e-mail adres er moet uitzien (voorbeeld@domein.be). Hierdoor hoeft de gebruiker niet te wachten tot de pagina herladen is en de server op basis van domeinregels bepaald heeft dat een bepaalde invoer niet correct was doorgegeven. Dankzij JavaScript wordt dit onmiddellijk weergegeven en wordt de server niet onnodig belast met foutieve aanvragen.
-	\reactcode{code/validatie.js}{Client-side validatie met JavaScript}{code:validatie}
+	Het voornaamste voordeel van Javascript is dat er onmiddellijk interactie kan gemaakt worden met de \hyperref[ui]{UI} op client-side niveau. Dit wil zeggen dat de interacties met server tot een minimum beperkt kunnen blijven. Het beste voorbeeld hiervoor is de validatie van gebruiker input. Javascript kan onmiddellijk nagaan of een gebruiker een correct e-mail adres of telefoonnummer heeft ingegeven op basis van reguliere expressies zoals in \prettyref{code:validatie}. De waarde die werd ingegeven in het \hyperref[html]{HTML} document wordt onderworpen aan een test door deze functie, er wordt getest of de waarde overeenkomt met het opgegeven patroon van hoe een e-mailadres er moet uitzien (voorbeeld@domein.be). Hierdoor hoeft de gebruiker niet te wachten tot de pagina herladen is en de server op basis van domeinregels bepaald heeft dat een bepaalde invoer niet correct was doorgegeven. Javascript geeft dit dus onmiddellijk weer en belast de server niet onnodig met foutieve aanvragen.
+	\reactcode{code/validatie.js}{Client-side validatie met Javascript}{code:validatie}
 
-	Daarnaast heeft JavaScript er ook voor gezorgd dat de interactiviteit en de ervaringen van de gebruiker aangenamer werden. \hyperref[html]{HTML} is een statische geheel die de inhoud van een webpagina beschrijft en die geen mogelijkheden bied om de voor gedefinieerde tekst of afbeeldingen te gaan wijzigen zonder dat de pagina herladen moet worden. JavaScript biedt verschillende en eenvoudige oplossingen om de inhoud van \hyperref[html]{HTML} domein objecten te gaan aanpassen. \citep{vijaywebsolutions:Javascript}
-	\reactcode{code/mouseover.js}{HTML inhoud wijzigen met JavaScript}{code:mouseover}
-	In \prettyref{code:mouseover} wordt door middel van 13 lijnen code een afbeelding groter en terug kleiner gemaakt door met de muis over de afbeelding te gaan. Op die manier maakt JavaScript het mogelijk om te werken met drag-en-drop componenten, afbeelding galerijen die automatisch van afbeelding wijzigen, enz.. .
+	Daarnaast heeft Javascript er ook voor gezorgd dat de interactiviteit en de ervaringen van de gebruiker aangenamer werden. \hyperref[html]{HTML} is een statische geheel die de inhoud van een webpagina beschrijft en die geen mogelijkheden biedt om de voor gedefinieerde tekst of afbeeldingen te gaan wijzigen zonder dat de pagina moet herladen worden. Javascript biedt verschillende en eenvoudige oplossingen om de inhoud van \hyperref[html]{HTML} domein objecten te gaan aanpassen. \citep{vijaywebsolutions:Javascript}
+	\reactcode{code/mouseover.js}{HTML inhoud wijzigen met Javascript}{code:mouseover}
+	In \prettyref{code:mouseover} wordt door middel van 13 lijnen code een afbeelding groter en terug kleiner gemaakt door met de muis over de afbeelding te gaan. Op die manier maakt Javascript het mogelijk om te werken met drag-en-drop componenten, afbeelding galerijen die automatisch van afbeelding wijzigen, enz.. .
 
-\section{De beperkingen van JavaScript}
-JavaScript wordt niet beschouwd als een volwaardige programmeertaal omdat het een aantal belangrijke onderdelen ontbreekt : 
+\section{De beperkingen van Javascript}
+Javascript wordt niet beschouwd als een volwaardige programmeertaal omdat er een aantal belangrijke onderdelen ontbreekt : 
 	\begin{itemize}
-		\item Client-side JavaScript is niet instaat om bestanden te lezen, wijzigen of te schrijven. Deze functionaliteit is vooral om veiligheidsredenen niet mogelijk.
-		\item JavaScript is singlethreaded.
-		\item JavaScript heeft geen ondersteuning voor netwerk applicaties.
+		\item Client-side Javascript is niet instaat om bestanden te lezen, te wijzigen of te schrijven. Deze functionaliteit is vooral om veiligheidsredenen niet mogelijk.
+		\item Javascript is singlethreaded.
+		\item Javascript heeft geen ondersteuning voor netwerk applicaties.
 	\end{itemize} 
- \section{JavaScript frameworks en libraries} \label{section:frameworkslibraries}
+ \section{Javascript frameworks en libraries} \label{section:frameworkslibraries}
 
-JavaScript wordt al snel eentonig en repetitief, je moet heel vaak dezelfde code gaan herhalen om bepaalde zaken uit te voeren in JavaScript. De bedoeling van een framework of library is dan ook om code herbruikbaar te maken en het voor de ontwikkelaar makkelijker te maken een goede structuur in zijn applicaties te behouden, zodat deze later gemakkelijker worden uitgebreid met nieuwe functionaliteiten.
+Javascript wordt al snel eentonig en repetitief, je moet heel vaak dezelfde code herhalen om bepaalde zaken uit te voeren in Javascript. Het is de bedoeling van een framework of library om de code herbruikbaar te maken en het voor de ontwikkelaar makkelijker te maken om een goede structuur in zijn applicaties te behouden, zodat deze later gemakkelijker worden uitgebreid met nieuwe functionaliteiten.
  
-Een framework is een verzameling van source code of libraries die mogelijkheid bieden om gemeenschappelijke functionaliteiten te voorzien aan een bepaalde soort van applicaties, het bevat vaak voorgeprogrammeerde \hyperref[template]{templates}, helper klassen, interfaces, … . Een framework behandelt eerder hoe een applicatie opgebouwd moet worden volgens de regels die de makers ervan voorzien hebben. De ontwikkelaar kan zich door gebruik te maken van een framework meer focussen op de onderdelen die uniek zijn aan zijn of haar applicatie.
+Een framework is een verzameling van source code of libraries die de mogelijkheid biedt om gemeenschappelijke functionaliteiten te voorzien aan een bepaalde soort van applicaties. Het bevat vaak voorgeprogrammeerde \hyperref[template]{templates}, helper klassen, interfaces, … . Een framework behandelt eerder hoe een applicatie opgebouwd moet worden volgens de regels die de makers ervan voorzien hebben. De ontwikkelaar kan zich, door gebruik te maken van een framework, meer focussen op de onderdelen die uniek zijn aan zijn of haar applicatie.
 
-Een library daarentegen zal over het algemeen slechts één deel van een bepaalde functionaliteit voorzien. Het is een verzameling van voorgeprogrammeerde JavaScript code die ervoor zorgen dat bepaalde onderdelen van functionaliteiten abstract benaderd kunnen worden en waardoor de ontwikkelaar veel minder code zelf hoeft te schrijven. \citep{docforge:Javascript}
+Een library daarentegen zal over het algemeen slechts één deel van een bepaalde functionaliteit voorzien. Het is een verzameling van voorgeprogrammeerde Javascript code die ervoor zorgt dat bepaalde onderdelen van functionaliteiten abstract benaderd kunnen worden en waardoor de ontwikkelaar veel minder code zelf hoeft te schrijven. \citep{docforge:Javascript}
 
 Voorbeelden van frameworks : AngularJS, Backbone.js, Ember, Knockout.
 Voorbeelden van libraries : JQuery, underscore.js.
-
-

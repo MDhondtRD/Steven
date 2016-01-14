@@ -1,5 +1,6 @@
 \chapter{React Native} \label{chapter:reactnative}
 In maart 2015 bracht Facebook het open-source framework React Native uit voor iOS. React Native is sinds maart verkrijgbaar via GitHub en kan genieten van een hoge populariteit bij ontwikkelaars. Toen Facebook in maart het nieuws openbaar maakte, werd het Android gedeelte van de app met een vertraging van 6maanden aangekondigd. Op 14 september was het dan zo ver, React Native kan nu ook gebruikt worden om Android applicaties te schrijven op de React manier. 
+
 \centerline{
 	\begin{minipage}{.8\linewidth}
 		\vspace*{2ex}
@@ -10,9 +11,9 @@ In maart 2015 bracht Facebook het open-source framework React Native uit voor iO
 	\end{minipage}
 }
 
-De aanpak van Facebook om applicaties te schrijven in JavaScript is niet nieuw maar React Native heeft een heel eigen manier ontwikkeld om dit te kunnen realiseren.
+De aanpak van Facebook om applicaties te schrijven in Javascript is niet nieuw maar React Native heeft een heel eigen manier ontwikkeld om dit te kunnen realiseren.
 \section{Native applicatie}
-Een native applicatie is een applicatie die ontwikkeld is voor een specifiek platform. De maker van het platform heeft hiervoor een specifieke programmeertaal aangeduid, met API om de platform specifieke componenten, views, enz.. te kunnen gebruiken. Vaak zijn hieraan ook duidelijke en verplichte richtlijnen aan verbonden om te mogen/kunnen programmeren voor dit specifieke platform. De applicaties worden verkrijgbaar gemaakt in stores die door de aanbieders van het OS worden aangeboden.
+Een native applicatie is een applicatie die ontwikkeld is voor een specifiek platform. De maker van het platform heeft hiervoor een specifieke programmeertaal aangeduid, met API om de platform specifieke componenten, views, enz.. te kunnen gebruiken. Vaak zijn hieraan ook duidelijke en verplichte richtlijnen verbonden om te mogen/kunnen programmeren voor dit specifieke platform. De applicaties worden verkrijgbaar gemaakt in stores die door de aanbieders van het OS worden aangeboden.
 
 Positieve eigenschappen van native ontwikkeling : 
 \begin{itemize}
@@ -25,7 +26,7 @@ Toch zijn er ook negatieve eigenschappen aan verbonden :
 \begin{itemize}
 \item De applicatie moet ontwikkeld worden op elk platform afzonderlijk.
 \item Er is een goedkeuring nodig om de applicatie te publiceren in de applicatie stores.
-\item Een update in de software van de OS betekend vaak dat een applicatie moet aangepast worden.
+\item Een update in de software van de OS betekent vaak dat een applicatie moet aangepast worden.
 \item Hoge ontwikkelingskost.
 \end{itemize}
 
@@ -79,8 +80,8 @@ Android en iOS hebben volgens IDC (International Data Corporation)(\prettyref{fi
 
 \section{Hybride applicaties}\label{section:hybride}
 
-Hybride applicaties zijn een combinatie van een native component, vaak een webview, en een web applicatie in HTML en JavaScript. Deze aanpak wordt weleens de “best of both worlds” -aanpak genoemd omdat ze de voordelen van een native applicatie combineren met de voordelen van een web applicatie, en het grootste voordeel is natuurlijk dat de code slechts één keer geschreven hoeft te worden. Bij een hybride applicatie is het dus meestal zo dat de ontwikkelaar de applicatie gaat programmeren zoals een web applicatie maar deze wordt als het ware gewrapt in een native webview component van het specifieke platform waarvoor de applicatie bedoeld wordt. 
-Wanneer een ontwikkelaar de native API componenten, zoals camera, gebruikerslocatie, … wenst te gebruiken in zijn applicatie dan kan die daarvoor gebruik maken van een framework zoals PhoneGap, Ionic of Cordova. Deze frameworks maken gebruik van HTML5, CSS en JavaScript om hybride applicaties voor mobiel te ontwikkelen.
+Hybride applicaties zijn een combinatie van een native component, vaak een webview, en een web applicatie in HTML en Javascript. Deze aanpak wordt weleens de “best of both worlds” -aanpak genoemd omdat ze de voordelen van een native applicatie combineren met de voordelen van een web applicatie, en het grootste voordeel is natuurlijk dat de code slechts één keer moet geschreven worden. Bij een hybride applicatie is het dus meestal zo dat de ontwikkelaar de applicatie gaat programmeren zoals een web applicatie maar deze wordt als het ware gewrapt in een native webview component van het specifieke platform waarvoor de applicatie bedoeld wordt. 
+Wanneer een ontwikkelaar de native API componenten, zoals camera, gebruikerslocatie, … wenst te gebruiken in zijn applicatie dan kan die daarvoor gebruik maken van een framework zoals PhoneGap, Ionic of Cordova. Deze frameworks maken gebruik van HTML5, CSS en Javascript om hybride applicaties voor mobiel te ontwikkelen.
 
 Positieve eigenschappen van hybride applicaties : 
 \begin{itemize}
@@ -107,7 +108,7 @@ Een aantal voorbeelden van populaire hybride applicaties :
 	\item \textbf{Twitter} : sociaal netwerk applicatie.
 \end{itemize}
 
-Uit deze voorbeelden kan de conclusie getrokken worden dat wanneer men een applicatie wenst te bouwen die veel http aanvragen (post, get, ….) zal moeten uitvoeren, best hybride ontwikkeld wordt.
+Uit deze voorbeelden kan men concluderen dat wanneer men een applicatie wenst te bouwen die veel http aanvragen (post, get, ….) zal moeten uitvoeren, best hybride ontwikkeld wordt.
 	
 \begin{figure}
                \centering
@@ -172,24 +173,24 @@ Uit deze voorbeelden kan de conclusie getrokken worden dat wanneer men een appli
 
 	
 	\section{Waarom React Native?}
-	Er zijn verschillende redenen waarom native mobiele omgevingen moeilijker zijn om mee te werken dan het web. Allereerst, is het moeilijk om componenten weer te geven op het scherm, deze moeten vaak manueel op de view geplaatst worden en ze moeten voorzien worden van een grootte. Daarnaast was er geen mogelijkheid om React code te integreren, die het proces voor bouwen van websites met telkens veranderende datasets had vereenvoudigd. 
+	Er zijn verschillende redenen waarom native mobiele omgevingen moeilijker zijn om mee te werken dan het web. Allereerst is het moeilijk om componenten weer te geven op het scherm, deze moeten vaak manueel op de view geplaatst en voorzien worden van een grootte. Daarnaast was er geen mogelijkheid om React code te integreren, die het proces voor bouwen van websites met telkens veranderende datasets had vereenvoudigd. 
 	
-De grootste ergernis bij Facebook ingenieurs was dat wanneer er native applicaties werden gebouwd ze rekening moesten houden met het telkens heropstarten van de applicatie wanneer er iets werd gewijzigd. De wijzigingen van een knop die aantal centimeter werd verplaatst, bijvoorbeeld zorgde ervoor dat als men de wijziging op het scherm wou weergeven de applicatie volledig herstart moest worden. Wat het ontwikkelingsproces sterk vertraagde. 
-Bij Facebook wordt er 2 maal per dag (!) een nieuwe versie van de website afgeleverd zodat resultaten van een bepaald experiment onmiddellijk worden waargenomen en eventuele fouten per direct kunnen worden opgelost. Bij de native applicatie van Facebook moet er vaak weken of maanden gewacht worden om een wijziging te kunnen doorvoeren, omdat de aanbieders van de stores deze eerst moeten nakijken en goedkeuren. Dit brengt een hoop tijdsverlies  en dus ook geldverlies met zich mee. 
+De grootste ergernis bij Facebookingenieurs was dat als er native applicaties worden gebouwd ze rekening moesten houden met het telkens heropstarten van de applicatie nadat er iets werd gewijzigd. De wijzigingen van een knop die bijvoorbeeld een aantal centimeter werd verplaatst, zorgde ervoor dat als men de wijziging op het scherm wou weergeven, de applicatie volledig moest herstart worden. Dat vertraagde sterk het ontwikkelingsproces.
+Bij Facebook wordt er 2 maal per dag (!) een nieuwe versie van de website afgeleverd zodat resultaten van een bepaald experiment onmiddellijk worden waargenomen en eventuele fouten opgelost kunnen worden. Bij de native applicatie van Facebook moet er vaak weken of maanden gewacht worden om een wijziging te kunnen doorvoeren. De aanbieders van de stores moeten deze immers eerst nakijken en goedkeuren. Dit brengt een hoop tijdsverlies  en dus ook geldverlies met zich mee. 
 
 ``Move fast'' zit bij Facebook in het DNA, maar men was gebonden aan de regels van de mobiele OS aanbieders om de wijzigingen van hun applicaties te kunnen doorvoeren. Toch wou men bij Facebook niet inbinden op de gebruikerservaring en het uitzicht van de applicatie, deze moesten native blijven. \citep{occhino:React}
 
 \section{Wat is React Native?}
-React Native is een JavaScript framework die gebruik maakt van de React library, om native applicaties voor iOS (iPhone, iPad) en Android te schrijven, hierdoor kunnen ze het grootste deel van de smartphone en tablet gebruikers bereiken. Toch gebruikt Facebook in React Native een hybride aanpak, want het maakt gebruik van JavaScript maar de applicatie zal volledig native beschouwd worden.
+React Native is een Javascript framework die gebruik maakt van de React library, om native applicaties voor iOS (iPhone, iPad) en Android te schrijven, hierdoor kunnen ze het grootste deel van de smartphone- en tabletgebruikers bereiken. Toch gebruikt Facebook in React Native een hybride aanpak, want het maakt gebruik van Javascript. De applicatie zal wel volledig native beschouwd worden.
 
-Dankzij dit framework heeft Facebook het mogelijk gemaakt voor web ontwikkelaars om applicaties te schrijven voor mobiele platformen in de reeds beheerste JavaScript taal en omdat het grootste deel van de code gedeeld kan worden tussen beide platformen wordt een gekend probleem van mobiele applicatie ontwikkeling geëlimineerd, nl. dat eenzelfde applicatie in meerdere programmeer talen geschreven moest worden. 
+Dankzij dit framework heeft Facebook het mogelijk gemaakt voor web ontwikkelaars om applicaties te schrijven voor mobiele platformen in de reeds beheerste Javascript taal en omdat het grootste deel van de code kan gedeeld worden tussen beide platformen wordt een gekend probleem van mobiele applicatieontwikkeling geëlimineerd, namelijk dat eenzelfde applicatie in meerdere programmeertalen geschreven moest worden. 
 
-Net zoals React worden React Native applicaties geschreven in een mix van JavaScript en JSX. Onderliggend is er een soort brug voorzien die de componenten van de API’s in Objective C (iOS) of Java (Android) gaan aanspreken en gebruiken in de applicatie. Met andere woorden, de applicaties die gemaakt worden in React Native maken gebruik van echte mobiele UI componenten, en geen webviews zoals vele hybride applicaties, zodat de applicatie aanvoelt voor de gebruiker zoals elke andere mobile applicatie geschreven in de native taal. Daarnaast zijn er ook interfaces voorzien die de hardware componenten zoals camera, gebruikerslocatie, … kunnen aanspreken.
+Net zoals React worden React Native applicaties geschreven in een mix van Javascript en JSX. Onderliggend is er een soort brug voorzien die de componenten van de API’s in Objective C (iOS) of Java (Android) gaan aanspreken en gebruiken in de applicatie. Met andere woorden, de applicaties die gemaakt worden in React Native maken gebruik van echte mobiele UI componenten en geen webviews zoals vele hybride applicaties, zodat de applicatie aanvoelt zoals elke andere mobile applicatie geschreven in de native taal. Daarnaast zijn er ook interfaces voorzien die de hardware componenten zoals camera, gebruikerslocatie, … kunnen aanspreken. \citep{eisenman:react}
 
 \section{Hoe werkt React Native?}
-Om de werking van React Native te kunnen begrijpen moet de werking van React gekend zijn, nl. de manier waarop React omgaat met het virtuele DOM (\prettyref{section:virtualdom}). React plaatst zoals eerder vermeld een abstractie laag tussen de code van de ontwikkelaar en hetgeen dat zichtbaar is voor de gebruiker. Maar wanneer gesproken wordt over native mobiele applicaties dan wordt er niet gewerkt met de browser, en moest Facebook een andere oplossing zoeken om deze manier van werken ook te kunnen toepassen. 
+Om de werking van React Native te kunnen begrijpen, moet de werking van React gekend zijn, namelijk de manier waarop React omgaat met het virtuele DOM (\prettyref{section:virtualdom}). React plaatst zoals eerder vermeld een abstractie laag tussen de code van de ontwikkelaar en datgene wat zichtbaar is voor de gebruiker. Maar wanneer gesproken wordt over native mobiele applicaties dan wordt er niet gewerkt met de browser dus moest Facebook een andere oplossing zoeken om deze manier van werken ook te kunnen toepassen. 
 
-Facebook heeft hiervoor met React Native een gepaste oplossing bedacht, in plaats van gebruik te maken van het DOM van de browser gaat React Native Objective C API’s gebruiken om iOS componenten weer te geven, of Java API’s gebruiken om Android componenten weer te geven.  In \prettyref{fig:dombridge} wordt het verschil tussen een React component en React Native component op gebied van weergave getoond. In plaats van het Virtuele DOM wordt de “bridge” aangesproken om de juiste weergave te tonen in de juiste OS.  
+Facebook heeft hiervoor met React Native een gepaste oplossing bedacht. In plaats van gebruik te maken van het DOM van de browser, gaat React Native Objective C API’s gebruiken om iOS componenten weer te geven, of Java API’s gebruiken om Android componenten weer te geven.  In \prettyref{fig:dombridge} wordt het verschil tussen een React component en React Native component op gebied van weergave getoond. In plaats van het Virtuele DOM wordt de “bridge” aangesproken om de juiste weergave te tonen in de juiste OS.  
 
 	\begin{figure}
                \centering
@@ -225,19 +226,19 @@ Facebook heeft hiervoor met React Native een gepaste oplossing bedacht, in plaat
 
 
 
-De bridge of brug die gemaakt wordt voorziet React van een interface in de platform specifieke UI elementen. De layout die voorzien wordt door de render functie van een React component zal met ander woorden vertaald worden naar een gepaste component. Bv. <view> kan vertaald worden naar een iOS specifieke UIView. De brug is niet uniek aan React, het PhoneGap framework gebruikt ook een brug om API’s aan te spreken, het verschil met React Native is dat de brug niet enkel de hardware componenten zal gaan aanspreken maar ook de componenten die de layout van een native applicatie gaat samenstellen.
+De gebouwde bridge of brug voorziet React van een interface in de platform specifieke UI elementen. De voorziene layout door de render functie van een React component zal met andere woorden vertaald worden naar een gepaste component. Namelijk <view> kan vertaald worden naar een iOS specifieke UIView. De brug is niet uniek aan React, het PhoneGap framework gebruikt ook een brug om API’s aan te spreken, het verschil met React Native is dat de brug niet enkel de hardware componenten zal aanspreken maar ook de componenten die de layout van een native applicatie zal samenstellen.
 
-De levensloop van de componenten in React Native is dezelfde als die van React voor web ontwikkeling, maar het weergave proces is een beetje anders, door het gebruik van de brug. Door de brug te gebruiken, is React Native verplicht om op een andere thread te gaan werken dan de main thread, op deze manier kan er voor gezorgd worden dat de applicatie niet lang moet laden en voorkomt het dat de applicatie ongewenst vastloopt.
+De levensloop van de componenten in React Native is dezelfde als die van React voor webontwikkeling, maar het weergaveproces is anders. Door de brug te gebruiken, zal een React Native applicatie niet op de main thread maar op een andere thread lopen, op deze manier zal de applicatie niet lang moet laden en voorkomt het dat de applicatie ongewenst vastloopt.
 
 \subsection{Developer experience}
 
-De wijze waarop React Native werkt wordt vaak gelinkt aan cross-platform applicatie ontwikkeling zoals PhoneGap, Ionic of Cordova, eerder vermeld bij (\prettyref{section:hybride}), toch onderscheid React Native zich van hybride ontwikkeling doordat het de platform standaard weergave API gebruikt. Hybride tegenhangers maken gebruik van een webview wrapper om hun applicatie te gaan weergeven. Wanneer React Native een component aanspreekt wordt dit ook de echte native component van dat platform en geen HTML5 component. Op deze manier worden de nadelen van hybride ontwikkeling op gebied van gebruikerservaring volledig geëlimineerd, en de voordelen ervan behouden. 
+De wijze waarop React Native werkt, wordt vaak gelinkt aan cross-platform applicatie ontwikkeling zoals PhoneGap, Ionic of Cordova. Toch onderscheid React Native zich van hybride ontwikkeling doordat het de platform standaard weergave API gebruikt. Hybride tegenhangers maken gebruik van een webview wrapper om hun applicatie weer te geven. Wanneer React Native een component aanspreekt wordt dit ook de echte native component van dat platform en geen HTML5 component. Op deze manier worden de nadelen van hybride ontwikkeling op gebied van gebruikerservaring volledig geëlimineerd.  
 
-Eén van de grootste voordelen van React Native is de ``Developer Experience'', want die kan nu door gewoon JavaScript (+ ReactJS) een native applicatie maken, zonder echt veel te moeten leren over mobiele applicatie ontwikkeling. Dankzij de uitgebreide documentatie die Facebook voorziet voor ontwikkelaars van React Native kan op eenvoudige en correcte wijze gebruik gemaakt worden van de native componenten. Maar het ingenieursteam van Facebook heeft naast een goede documentatie ook nog een aantal developer tools ontwikkeld die het leven van een ontwikkelaar moeten vereenvoudigen. Men heeft het bv. Mogelijk gemaakt dat tijdens het ontwikkelingsproces een ontwikkelaar de applicatie kan refreshen zoals een browser dat ook kan. Dit wordt technisch mogelijk gemaakt doordat de applicatie op een node.js server draait en in de code een pad wordt gegenereerd naar de lokale server, die werkt zoals een gewone webserver, dit brengt natuurlijk met zich mee dat de ontwikkeliteraties aanzienlijk korter worden.
-Dankzij het concept van een webserver voor het runnen van de applicatie in ontwikkeling, kan een ontwikkelaar de tools van Google’s Chrome en Mozilla’s Firefox ook gebruiken voor zijn applicatie. De applicatie zal niet zichtbaar zijn in de browser, maar debug boodschappen, errors, http requests, … zijn net zoals bij webtesten mogelijk om te gebruiken. De ingenieurs van Facebook hebben er ook nog eens voor gezorgd dat elke error die kan voorkomen nog eens voorzien wordt van een gedetailleerde boodschap. 
+Eén van de grootste voordelen van React Native is de ``Developer Experience'', want die kan nu door gewoon Javascript (+ React) een native applicatie maken, zonder echt veel te moeten leren over mobiele applicatie ontwikkeling. Dankzij de uitgebreide documentatie die Facebook voorziet voor ontwikkelaars van React Native kan op eenvoudige en correcte wijze gebruik gemaakt worden van de native componenten. Maar het ingenieursteam van Facebook heeft naast een goede documentatie ook nog een aantal developer tools ontwikkeld die het leven van een ontwikkelaar moeten vereenvoudigen. Zo maakt men het mogelijk dat tijdens het ontwikkelingsproces een ontwikkelaar de applicatie kan refreshen zoals een browser dat ook kan. Dit wordt technisch mogelijk gemaakt doordat de applicatie op een node.js server draait en in de code een pad wordt gegenereerd naar de lokale server, die werkt zoals een gewone webserver. Dit brengt natuurlijk met zich mee dat de ontwikkeliteraties aanzienlijk korter worden.
+Dankzij het concept van een webserver voor het runnen van de applicatie in ontwikkeling, kan een ontwikkelaar de tools van Google’s Chrome en Mozilla’s Firefox ook gebruiken voor zijn applicatie. De applicatie zal niet zichtbaar zijn in de browser, maar debug boodschappen, errors, http requests, … zijn net zoals bij webtesten mogelijk om te gebruiken. De ingenieurs van Facebook hebben er ook voor gezorgd dat elke mogelijke error voorzien wordt van een gedetailleerde boodschap. 
 
-Het andere probleem dat Facebook had was dat het weken of maanden duurde om een update door te voeren. Aangezien Apple en Google, JavaScript gebaseerde wijzigingen toelaat om doorgevoerd te worden zonder dat er controle wordt op uitgevoerd zoals bij native applicatie updates, zijn de wijzigingen in React Native onmiddellijk zichtbaar bij de gebruikers van de applicatie.
-Daarnaast is de code herbruikbaarheid van React Native applicaties ook nog een enorm groot voordeel, wanneer een applicatie volledig native ontwikkeld moet worden moet die zowel in Java als in Objective C (of Swift) geschreven worden, dubbel werk. Omdat React Native, native applicaties maakt is het niet altijd mogelijk om alle code te gaan hergebruiken, omdat sommige componenten heel specifiek voor het platform zijn en dus ook anders benaderd moeten worden. (zie hoofdstuk IOS vs Android in React Native). Volgens Christopher Chedeau, heeft de Facebook Ads applicatie een hergebruik van codebase tussen de iOS en Android applicatie van ongeveer 86\%. \citep{chedeau:React} 
+Het andere probleem van Facebook was de duurtijd, vaak enkele weken of maanden, om een update door te voeren. Apple en Google laten toe dat wijzigingen betreffende Javascript code onmiddellijk worden doorgevoerd, zonder eerst een controle door te voeren. Hierdoor zijn de wijzigingen in een React Native applicatie onmiddellijk zichtbaar.
+Daarnaast is de code herbruikbaarheid van React Native applicaties ook nog een enorm groot voordeel. Wanneer een applicatie volledig native ontwikkeld wordt, moet die zowel in Java als in Objective-C (of Swift) geschreven worden, dubbel werk. Omdat React Native, native applicaties maakt, is het niet altijd mogelijk om alle code te gaan hergebruiken. Sommige componenten zijn heel specifiek voor het platform en moeten dus ook anders benaderd worden. Volgens Christopher Chedeau, heeft de Facebook Ads applicatie een hergebruik van codebase tussen de iOS en Android applicatie van ongeveer 86\%. \citep{chedeau:React} 
 
 \centerline{
 	\begin{minipage}{.8\linewidth}
@@ -249,12 +250,12 @@ Daarnaast is de code herbruikbaarheid van React Native applicaties ook nog een e
 	\end{minipage}
 }
 
-Mark Shilling benadrukt in zijn bevindingen over werken met React Native als doorwinterde iOS developer, dat React Native nog niet volledig op punt staat maar dat er in een paar maanden tijd reeds veel gebeurd is door de community en Facebook om de kleine irritaties van ontwikkelaars weg te werken. 
+Mark Shilling benadrukt in zijn bevindingen over werken met React Native als doorwinterde iOS developer, dat React Native nog niet volledig op punt staat maar dat er in een paar maanden tijd reeds veel gebeurd is door de community en Facebook om de kleine irritaties weg te werken. 
 
 \section{React Native populariteit op het internet}
 
 React en React Native zijn nog niet zo lang actief op het internet, toch zijn er een aantal trends zichtbaar.
-De grafiek \prettyref{fig:questions} toont het aantal vragen die bij \emph{StackOverflow} worden gesteld over de Thema’s ReactJS en React Native, per maand in cumulatieve vorm. Aangezien React Native vrij jong is, zijn het aantal vragen dus ook nog vrij klein maar belangrijk om op te merken is dat de lijn sterk stijgend is zowel voor ReactJS als voor React Native. ReactJS kreeg ook een boost wanneer React Native werd aangekondigd en React Native krijgt een piek moment wanneer Facebook de Android versie ervoor uitbracht. Hetzelfde geldt voor de score die toegekend wordt aan een bepaalde vraag of antwoord over een bepaald onderwerp (\prettyref{fig:score}), de trend is in stijgende lijn wat betekent dat de community van React Native actief bezig is om ontwikkelaars te ondersteunen bij het bouwen van React Native applicaties, en samen op zoek gaan naar \emph{best practices}. 
+De grafiek \prettyref{fig:questions} toont het aantal vragen die bij \emph{StackOverflow} worden gesteld over de Thema’s ReactJS en React Native, per maand in cumulatieve vorm, \citep{stack:data}. Aangezien React Native vrij jong is, zijn het aantal vragen dus ook nog vrij klein maar belangrijk om op te merken is dat de lijn sterk stijgend is zowel voor ReactJS als voor React Native. ReactJS kreeg ook een boost wanneer React Native werd aangekondigd en React Native krijgt een piekmoment wanneer Facebook de Android versie ervoor uitbracht. Hetzelfde geldt voor de score die toegekend wordt aan een bepaalde vraag of antwoord over een bepaald onderwerp (\prettyref{fig:score}). De trend is in stijgende lijn wat betekent dat de community van React Native actief bezig is om ontwikkelaars te ondersteunen bij het bouwen van applicaties, en opstellen van \emph{best practices}. 
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
@@ -276,7 +277,7 @@ De grafiek \prettyref{fig:questions} toont het aantal vragen die bij \emph{Stack
 			\addplot[graphorange] coordinates { (03/15, 73) (04/15, 196) (05/15, 311) (06/15, 394) (07/15, 500) (08/15, 613) (09/15, 800) (10/15, 1079) (11/15, 1434) (12/15, 1652) };
 		\end{axis}
 	\end{tikzpicture}
-	\caption{StackOverflow vragen}
+	\caption{StackOverflow vragen \citep{stack:data}}
 	\label{fig:questions}
 \end{figure}
 \begin{figure}
@@ -300,11 +301,11 @@ De grafiek \prettyref{fig:questions} toont het aantal vragen die bij \emph{Stack
 			\addplot[graphorange] coordinates { (03/15, 392) (04/15, 650) (05/15, 775) (06/15, 872) (07/15, 938) (08/15, 1083) (09/15, 1319) (10/15, 1491) (11/15, 1614) (12/15, 1709) };
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Score}
+	\caption{StackOverflow scores \citep{stack:data}}
 	\label{fig:score}
 \end{figure}
 
-Dezelfde trends kan men terug vinden bij \emph{Google Trends} \prettyref{fig:google} die de zoekopdrachten op basis van kernwoorden \emph{ReactJS} en \emph{React Native} weergeeft week na week, startend van begin 2015. React Native heeft overduidelijke piekmomenten tijdens de eerste periode, Maart 2015 (week 16 - 17) toen het voor het eerst werd uitgebracht en tijdens de periode dat React Native ook voor Android beschikbaar werd, September 2015 (week 37 - 38). Toch is de algemene trend voor zowel ReactJS als voor React Native een stijgende lijn in zoekopdrachten bij \emph{Google Trends} .
+Dezelfde trends kan men terug vinden bij \emph{Google Trends} \prettyref{fig:google} die de zoekopdrachten op basis van kernwoorden \emph{ReactJS} en \emph{React Native} weergeeft week na week, startend van begin 2015, \citep{google:trends}. React Native heeft overduidelijke piekmomenten tijdens de eerste periode in maart 2015 (week 16 - 17) toen het voor het eerst werd uitgebracht en tijdens de periode dat React Native ook voor Android beschikbaar werd in september 2015 (week 37 - 38). Toch is de algemene trend voor zowel ReactJS als voor React Native een stijgende lijn in zoekopdrachten bij \emph{Google Trends} .
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
@@ -326,15 +327,15 @@ Dezelfde trends kan men terug vinden bij \emph{Google Trends} \prettyref{fig:goo
 			\addplot[graphorange] coordinates { (1, 0) (2, 0) (3, 0) (4, 44) (5, 37) (6, 31) (7, 20) (8, 18) (9, 20) (10, 14) (11, 15) (12, 75) (13, 59) (14, 36) (15, 40) (16, 46) (17, 36) (18, 26) (19, 33) (20, 26) (21, 29) (22, 32) (23, 30) (24, 32) (25, 39) (26, 32) (27, 34) (28, 35) (29, 37) (30, 38) (31, 35) (32, 33) (33, 35) (34, 40) (35, 40) (36, 43) (37, 100) (38, 73) (39, 64) (40, 68) (41, 73) (42, 68) (43, 64) (44, 66) (45, 69) (46, 76) (47, 73) (48, 71) (49, 76) (50, 92) };
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Google Trends zoekopdrachten met kernwoorden ReactJS en React Native}
+	\caption{Google Trends zoekopdrachten met kernwoorden ReactJS en React Native, \cite{google:trends}}
 	\label{fig:google}
 \end{figure}
 \section{React Native componenten}
-Net zoals in ReactJS (\prettyref{section:rjscomponenten}), werkt React Native op een exacte wijze om componenten aan te maken. Toch zijn er een aantal verschillen in syntax, zoals eerder vermeld werkt native niet met het DOM maar met platform specifieke componenten. Deze moeten dan ook op correcte wijze worden aangesproken.
+Net zoals in React, werkt React Native op een exacte wijze om componenten aan te maken. Toch zijn er een aantal verschillen in syntax, zoals eerder vermeld, werkt native niet met het DOM maar met platform specifieke componenten. Deze moeten dan ook op correcte wijze worden aangesproken.
 
 \subsection{Views}
- In ReactJS plaatsen we HTML componenten op het DOM (\emph{<div>, <p>, <span>}), bij React Native gaan we de platform componenten gaan weergeven. Het meest basis component in \hyperref[ui]{UI} elementen is \emph{<View>} die voor een webontwikkelaar best te vergelijken is met het \emph{<div>} element, en zich vertaald naar respectievelijk iOS en Android als \emph{UIView} en \emph{View}. 
-In \prettyref{table:componenten} wordt een vergelijking van HTML componenten, gebruikt in ReactJS gemaakt met React Native tegenhangers. 
+In ReactJS plaatsen we HTML componenten op het DOM (\emph{<div>, <p>, <span>}), bij React Native gaan we de platformcomponenten weergeven. Het meest gebruikte basiscomponent in \hyperref[ui]{UI} elementen is het \emph{<View>} component. Deze is voor een webontwikkelaar best te vergelijken, met het \emph{<div>} element en het vertaalt zich naar respectievelijk iOS en Android als \emph{UIView} en \emph{View}. 
+In tabel \prettyref{table:componenten} wordt een vergelijking van HTML componenten, gebruikt in ReactJS gemaakt met React Native tegenhangers. 
 
 
 \begin{table}
@@ -355,11 +356,11 @@ ReactJS & React Native \\
 \end{table}
 
 \reactcode{code/rncomponent.js}{Basis component React Native}{code:rncomponent}
-In \prettyref{code:rncomponent}  wordt er getoond hoe een component wordt samengesteld in React Native, het enige verschil met het web is zoals eerder vermeld enkel de UI componenten. Deze componenten uit \prettyref{table:componenten} worden aanzien als de basis componenten en worden automatisch geïmporteerd vanuit het standaard package die automatisch wordt ingeladen wanneer een nieuwe applicatie wordt gestart. Wanneer de ontwikkelaar andere componenten wenst te gebruiken in zijn applicatie zullen die eerst geïmporteerd moeten worden, zoals \prettyref{code:rnimport}, let hierbij goed op de naamgeving van het component \emph{DatePickerIOS}. Platform specifieke componenten en \hyperref[api]{API's} krijgen speciale tags, waarbij de suffix de platform naam is. 
+In \prettyref{code:rncomponent}  toont men hoe een component wordt samengesteld in React Native, het enige verschil met het web is zoals eerder vermeld enkel de UI componenten. Deze componenten uit tabel \prettyref{table:componenten} worden aanzien als de basiscomponenten. Deze zijn aanwezig in de standaard package en worden automatisch geïmporteerd wanneer een nieuwe project wordt gestart. Als de ontwikkelaar andere componenten wenst te gebruiken in zijn applicatie zullen die eerst geïmporteerd moeten worden, zoals \prettyref{code:rnimport}. Let hierbij goed op de naamgeving van het component \emph{DatePickerIOS}. Platform specifieke componenten en \hyperref[api]{API's} krijgen speciale tags, waarbij de suffix de platform naam is. 
 \reactcode{code/rnimport.js}{Import een component in React Native}{code:rnimport}
 
 \subsection{Stijlen van componenten}
-Op het web wordt een stijl meegegeven aan componenten door middel van \hyperref[css]{CSS}, aanbieders van mobiele \hyperref[os]{OS} hebben vaak een eigen manier om componenten vorm te geven. Bij Android gebeurt dit door \hyperref[xml]{XML} en bij iOS heeft men een eigen variant gemaakt, React Native heeft één standaard aanpak gecreëerd om componenten te gaan stijlen. De wijze waarop in React Native stijl aan componenten wordt gegeven is een vereenvoudigde versie van \hyperref[css]{CSS} die door de brug, steunend op \hyperref[flexbox]{Flexbox} modaliteiten vertaald wordt naar de platform eigen stijlen.
-Het is in React Native niet gebruikelijk om aparte stijlpagina’s te maken zoals bij het web, maar om de stijl als een JavaScript object te omschrijven. In \prettyref{code:rnstyle}, zie je hoe een stijl aan een component wordt meegegeven.
+Op het web wordt een stijl meegegeven aan componenten door middel van \hyperref[css]{CSS}, aanbieders van mobiele \hyperref[os]{OS} hebben vaak een eigen manier om componenten vorm te geven. Bij Android gebeurt dit door \hyperref[xml]{XML} en bij iOS heeft men een eigen variant gemaakt, React Native heeft één standaard aanpak gecreëerd om componenten te gaan stijlen. De wijze waarop in React Native stijl aan componenten wordt gegeven, is een vereenvoudigde versie van \hyperref[css]{CSS} die door de brug, steunend op \hyperref[flexbox]{Flexbox} modaliteiten vertaald wordt naar de platform eigen stijlen.
+Het is in React Native niet gebruikelijk om aparte stijlpagina’s te maken zoals bij het web, maar om de stijl als een Javascript object te omschrijven. In \prettyref{code:rnstyle}, zie je hoe een stijl aan een component wordt meegegeven.
  
 \reactcode{code/rnstyle.js}{Stijlen van componenten in React Native}{code:rnstyle}
